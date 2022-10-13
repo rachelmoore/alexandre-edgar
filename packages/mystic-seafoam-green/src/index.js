@@ -1,21 +1,16 @@
-const Root = () => {
-  return (
-    <>
-      You can edit your package in:
-      <pre>packages/mystic-seafoam-green/src/index.js</pre>
-    </>
-  );
-};
+import Root from "./components"
 
-export default {
+const mysticSeafoamGreen = {
   name: "mystic-seafoam-green",
   roots: {
-    mysticSeafoamGreen: Root
+    theme: Root,
   },
   state: {
-    mysticSeafoamGreen: {}
+    theme: {},
   },
   actions: {
-    mysticSeafoamGreen: {}
-  }
-};
+    theme: {},
+  },
+}
+
+export default mysticSeafoamGreen

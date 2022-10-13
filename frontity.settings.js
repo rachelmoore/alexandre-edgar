@@ -2,14 +2,14 @@ const settings = {
   "name": "alexandre-edgar",
   "state": {
     "frontity": {
-      "url": "https://test.frontity.org",
-      "title": "Test Frontity Blog",
-      "description": "WordPress installation for Frontity development"
+      "url": "http://alexandreedgar.technocowgirl.com/",
+      "title": "Alexandre Edgar",
+      "description": "You Are That"
     }
   },
   "packages": [
     {
-      "name": "@frontity/mars-theme",
+      "name": "mystic-seafoam-green",
       "state": {
         "theme": {
           "menu": [
@@ -45,7 +45,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://test.frontity.org"
+          "url": "http://alexandreedgar.technocowgirl.com/"
         }
       }
     },

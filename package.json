@@ -26,6 +26,7 @@
     "dayjs": "^1.11.5",
     "framer-motion": "^4.1.17",
     "frontity": "^1.17.2",
-    "mystic-seafoam-green": "file:packages/mystic-seafoam-green"
+    "mystic-seafoam-green": "file:packages/mystic-seafoam-green",
+    "react-icons": "^4.6.0"
   }
 }

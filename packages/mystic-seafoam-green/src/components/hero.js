@@ -25,7 +25,7 @@ import {
       return (
         <Header isPostType={data.isPostType} isPage={data.isPage}>
             <Flex height="75%" direction="column" alignItems="center" justifyContent="center">
-                <Heading size="lg" color="white">Alexandre Edgar</Heading>
+                {/* <Heading size="lg" color="white">Alexandre Edgar</Heading> */}
             </Flex>
         </Header>
       )

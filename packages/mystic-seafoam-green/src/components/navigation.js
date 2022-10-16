@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { connect, Global, css, styled, Head } from "frontity";
+import React from "react";
 import {
   Button,
   Drawer,
@@ -26,11 +25,14 @@ function Navigation() {
     const btnRef = React.useRef();
   
     return (
-      <>
-        <Flex direction="row">
-            <Link link="https://instagram.com"><Icon as={FiMail} color="white" boxSize={7} mr={3}></Icon></Link>
-            <Link link="https://instagram.com"><Icon as={FaInstagram} color="white" boxSize={7}></Icon></Link>
-        </Flex>
+        <Flex direction="row" bg="brand.100" padding={5} justify="space-between">
+            <Flex>
+                <Heading size="lg" color="white">Alexandre Edgar</Heading>
+            </Flex>
+            <Flex direction="row">
+                <Link link="https://instagram.com"><Icon as={FiMail} color="white" boxSize={7} mr={3} pt={1}></Icon></Link>
+                <Link link="https://instagram.com"><Icon as={FaInstagram} color="white" boxSize={7} pt={1}></Icon></Link>
+            </Flex>
         {/* <Button ref={btnRef} ml={3} mr={3} bg="brand.200" onClick={onOpen}>
         <Icon as={FiMenu} color="white" boxSize={7} />
         </Button> */}
@@ -64,7 +66,7 @@ function Navigation() {
             </DrawerFooter>
           </DrawerContent>
         </Drawer> */}
-      </>
+      </Flex>
     )
   }
 

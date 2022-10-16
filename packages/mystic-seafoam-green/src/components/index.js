@@ -11,6 +11,7 @@ import Switch from "@frontity/components/switch"
 import List from "./list"
 import Post from "./post"
 import Page from "./page"
+import Navigation from "./navigation"
 import Hero from "./hero"
 
 const Root = ({ state }) => {
@@ -19,7 +20,7 @@ const Root = ({ state }) => {
     const theme = extendTheme({
       colors: {
         brand: {
-          100: "#3AAEC2",
+          100: "#0257A4",
           200: "#FD05E9",
           300: "#6A3A80",
           400: "#EE0300"
@@ -69,6 +70,7 @@ const Root = ({ state }) => {
         `}
         />
 
+        <Navigation />
         {state.router.link === "/" &&
           <Hero />
         }

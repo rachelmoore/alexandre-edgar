@@ -1,4 +1,4 @@
-import Root from "./components";
+import Root from "./components"
 
 const mysticSeafoamGreen = {
   name: "mystic-seafoam-green",
@@ -7,11 +7,6 @@ const mysticSeafoamGreen = {
   },
   state: {
     theme: {},
-  },
-  libraries: {
-    html2react: {
-      processors: [link]
-    }
   },
   actions: {
     theme: {},

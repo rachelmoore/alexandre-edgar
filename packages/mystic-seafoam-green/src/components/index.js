@@ -1,5 +1,5 @@
 import React from "react"
-import { connect, Global, css } from "frontity"
+import { connect, Global, css, styled, Head } from "frontity";
 import {
   extendTheme,
   Flex,
@@ -28,32 +28,58 @@ const Root = ({ state }) => {
   
     return (
       <ChakraProvider theme={theme}>
+          <Head>
+            <title>Alexandre Edgar</title>
+            <meta
+              name="description"
+              content="You Are That"
+            />
+        </Head>
         <Global
-            styles={css`
-            html {
-                font-family: system-ui, Verdana, Arial, sans-serif;
+          styles={css`
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+          html {
+            font-family: "system-ui, Verdana, Arial, sans-serif";
+          }
+          li {
+            line-height: 1.85em;
+          }
+          iframe {
+            width: 100% !important;
+          }
+          figure {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            @media (max-width: 600px) {
+              max-width: 90vw;
+              margin-top: 40px;
+              margin-bottom: 40px;
             }
-            `}
+          }
+          li {
+            margin-bottom: 10px;
+            line-height: 1.55em;
+            font-size: 17px;
+          }
+        `}
         />
-        <Flex direction="row">
-          <Heading>Hello Alexandre</Heading>
-          <p>Current URL: {state.router.link}</p>
-        </Flex>
-        <nav>
-          <Link link="/">Home</Link>
-          <br />
-          <Link link="/page/2">More posts</Link>
-          <br />
-          <Link link="/about-us">About Us</Link>
-        </nav>
-        <hr />
-        <main>
-          <Switch>
-            <List when={data.isArchive} />
-            <Post when={data.isPost} />
-            <Page when={data.isPage} />
-          </Switch>
-        </main>
+
+        {state.router.link === "/" &&
+          <Flex direction="column">
+            <Heading>Hello Alexandre</Heading>
+            <p>Current URL: {state.router.link}</p>
+          </Flex>
+        }
+
+        <Switch>
+          <List when={data.isArchive} />
+          <Post when={data.isPost} />
+          <Page when={data.isPage} />
+        </Switch>
       </ChakraProvider>
     )
   }

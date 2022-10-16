@@ -1,4 +1,4 @@
-# alexandre-edgar
+# new-awe
 
 This project was bootstrapped with [Frontity](https://frontity.org/).
 

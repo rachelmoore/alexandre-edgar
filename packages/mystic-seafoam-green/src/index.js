@@ -1,5 +1,4 @@
 import Root from "./components";
-import link from "@frontity/html2react/processors/link";
 
 const mysticSeafoamGreen = {
   name: "mystic-seafoam-green",
@@ -19,4 +18,4 @@ const mysticSeafoamGreen = {
   },
 }
 
-export default mysticSeafoamGreen;
+export default mysticSeafoamGreen

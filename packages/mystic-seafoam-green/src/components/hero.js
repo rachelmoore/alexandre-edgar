@@ -8,7 +8,7 @@ import {
   import React from "react"
   import { connect, styled, Head } from "frontity"
   import Link from "@frontity/components/link"
-  import awesite1 from '../assets/awesite1.png';
+  import awesite2 from '../assets/awesite2.png';
   
   const Hero = ({ state, libraries }) => {
     const data = state.source.get(state.router.link)
@@ -25,7 +25,7 @@ import {
       return (
         <Header isPostType={data.isPostType} isPage={data.isPage}>
             <Flex height="75%" direction="column" alignItems="center" justifyContent="center">
-                <Heading size="lg">Alexandre Edgar</Heading>
+                <Heading size="lg" color="white">Alexandre Edgar</Heading>
             </Flex>
         </Header>
       )
@@ -36,9 +36,9 @@ import {
   
   const Header = styled.header`
     background-color: #e5edee;
-    background: url(${awesite1});
-    background-position: 'center'; 
-    background-size: cover; 
+    background: url(${awesite2});
+    /* background-position: 'center';  */
+    background-size: 100%; 
     background-repeat: 'no-repeat';
     height: 700px;
     h1 {

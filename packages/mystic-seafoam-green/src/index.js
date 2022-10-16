@@ -1,4 +1,4 @@
-import Root from "./components"
+import Root from "./components";
 
 const mysticSeafoamGreen = {
   name: "mystic-seafoam-green",

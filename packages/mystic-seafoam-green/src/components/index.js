@@ -11,6 +11,7 @@ import Switch from "@frontity/components/switch"
 import List from "./list"
 import Post from "./post"
 import Page from "./page"
+import Hero from "./hero"
 
 const Root = ({ state }) => {
     const data = state.source.get(state.router.link)
@@ -69,10 +70,7 @@ const Root = ({ state }) => {
         />
 
         {state.router.link === "/" &&
-          <Flex direction="column">
-            <Heading>Hello Alexandre</Heading>
-            <p>Current URL: {state.router.link}</p>
-          </Flex>
+          <Hero />
         }
 
         <Switch>

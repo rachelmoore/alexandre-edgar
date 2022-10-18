@@ -18,7 +18,8 @@ import About from "./about"
 import Bio from "./bio"
 import Footer from "./footer"
 import Sessions from "./sessions"
-import Contact from "./contact";
+import Contact from "./contact"
+import HeroFooter from "./herofooter"
 
 const Root = ({ state }) => {
     const data = state.source.get(state.router.link)
@@ -101,8 +102,8 @@ const Root = ({ state }) => {
         <Flex direction="column" align="center" bg="brand.100">
           <Contact />
         </Flex>
+        <HeroFooter />
         <Box width="100%" height="2px" bg="brand.700" />
-
         <Footer />
 
         {/* <Switch>

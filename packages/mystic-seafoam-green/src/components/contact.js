@@ -2,6 +2,7 @@ import React from "react";
 import {
   Button,
   Heading,
+  Text,
   Textarea,
   Flex,
   FormControl,
@@ -60,25 +61,31 @@ function Contact() {
                 }}>
                     <form onSubmit={handleSubmit(onFormSubmit)}> 
                     <FormControl id="fromName">
-                        <FormLabel htmlFor="fromName">Name:</FormLabel>
+                        <FormLabel htmlFor="fromName" color="brand.700" fontSize="lg">Name:</FormLabel>
                         <Input name="fromName" {...register("fromName", { required: "This is required."})} />
                         <ErrorMessage errors={errors} name="fromName" render={({ message }) => <p className="error-message"><BiErrorCircle /> {message} </p>}/>
                     </FormControl>
-                    <FormControl id="replyTo">
-                        <FormLabel htmlFor="replyTo">Email:</FormLabel>
+                    <FormControl id="replyTo" mt={5}>
+                        <FormLabel htmlFor="replyTo" color="brand.700" fontSize="lg">Email:</FormLabel>
                         <Input name="replyTo" {...register("replyTo", { required: "This is required."})} />
                         <ErrorMessage errors={errors} name="replyTo" render={({ message }) => <p className="error-message"><BiErrorCircle /> {message} </p>}/>
                     </FormControl>
-                    <FormControl id="message">
-                        <FormLabel htmlFor="message">Message:</FormLabel>
+                    <FormControl id="message" mt={5}>
+                        <FormLabel htmlFor="message" color="brand.700" fontSize="lg">Message:</FormLabel>
                         <Textarea name="message" {...register("message")} />
                         <ErrorMessage errors={errors} name="message" render={({ message }) => <p className="error-message"><BiErrorCircle /> {message} </p>}/>
                     </FormControl>
                     <Button 
-                        variant="primary" 
                         type="submit"
+                        size="lg"
+                        borderColor="brand.700"
+                        borderWidth="1px"
+                        background="transparent"
+                        mt={10}
                     >
-                        Submit
+                        <Text color="brand.700">
+                            Submit
+                        </Text>
                     </Button>
                 </form> 
             </Stack>

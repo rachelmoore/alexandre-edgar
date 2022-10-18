@@ -15,8 +15,8 @@ function Footer() {
                 <Text size="lg" color="brand.700">Alexandre Edgar © 2022</Text>
             </Flex>
             <Flex direction="row">
-                <Link link="https://instagram.com"><Icon as={FiMail} color="brand.700" boxSize={7} mr={3} pt={1}></Icon></Link>
-                <Link link="https://instagram.com"><Icon as={FaInstagram} color="brand.700" boxSize={7} pt={1}></Icon></Link>
+              <a href="mailto:alexandrewedgar@gmail.com"><Icon as={FiMail} color="white" boxSize={7} mr={3}></Icon></a>
+              <Link link="https://instagram.com/alexandrewedgar"><Icon as={FaInstagram} color="white" boxSize={7}></Icon></Link>
             </Flex>
       </Flex>
     )

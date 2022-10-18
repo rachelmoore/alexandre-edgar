@@ -16,6 +16,7 @@ import Navigation from "./navigation"
 import Hero from "./hero"
 import About from "./about"
 import Bio from "./bio"
+import Footer from "./footer"
 
 const Root = ({ state }) => {
     const data = state.source.get(state.router.link)
@@ -82,13 +83,15 @@ const Root = ({ state }) => {
           <Hero />
         }
 
-        <Box width="100%" height="37px" bg="brand.100" />
+        <Box width="100%" height="5px" bg="brand.100" />
         <Flex direction="column" align="center" bg="brand.700">
           <About />
         </Flex>
         <Flex direction="row" align="center" bg="brand.100">
           <Bio />
         </Flex>
+
+        <Footer />
 
         {/* <Switch>
           <List when={data.isArchive} />

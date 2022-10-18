@@ -18,7 +18,16 @@ function Sessions() {
 
                 <Text fontWeight={500} mb="20px" fontSize="xl" pt={3} pb={3} color="blackAlpha.800">
                     While we become familiar with one another's communication and energy we can discuss 
-                    your current situation in life, present struggles, and hopes for what you will achieve in the process of breaking through percieved limitations and problems as well as your vision for how your life and being will be afterward.
+                    your current situation in life, present struggles, and hopes for what you will achieve in the process of breaking through percieved limitations and problems. 
+                </Text>
+
+                <Text fontWeight={500} mb="20px" fontSize="xl" pt={3} pb={3} color="blackAlpha.800">
+                    We can also explore your vision for how your life and being will be afterward.
+                </Text>
+
+                <Text fontWeight={500} mb="20px" fontSize="xl" pt={3} pb={3} color="blackAlpha.800">
+                    My goal in working with individuals is to empower them to be their own source of truth and strength. 
+                    My greatest accomplishment in working with someone is for them not to need the guidance of another anymore.
                 </Text>
 
                 <Text fontWeight={500} mb="20px" fontSize="xl" pt={3} pb={3} color="blackAlpha.800">

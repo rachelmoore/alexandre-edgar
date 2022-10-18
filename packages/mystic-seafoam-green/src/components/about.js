@@ -9,21 +9,15 @@ import {
 function About() {
     return (
       <Flex id="introduction" direction="column" justify="center" ml="15%" mr="15%">
-        <Heading size="xl" color="blackAlpha.800" fontWeight="500" mt={20} mb={10}>Experience your Soul’s emerging presence.</Heading>
+        <Heading size="xl" color="blackAlpha.800" fontWeight="500" mt={20} mb={10}>
+            That which knows it is experiencing cannot be an element of experience.
+            You are That.
+        </Heading>
         <Text color="blackAlpha.800" fontWeight={500} mb="20px" fontSize="xl" pt={3} pb={3}>
-            Hello, and thank you for the courage you are showing by opening yourself to healing work. 
-            It takes true courage to heal, and you have chosen to take the first step by reaching out for help. 
-            I work with people who recognize themselves as co creators and co authors of their life and who are 
-            working to understand themselves more deeply. These people desire to create and live a new narrative 
-            that is not defined by the past. I want to help others know themselves as creative, resourceful, and whole; 
-            the obstacles blocking this recognition are what I help others to clear away and release.
+            If you are faced with suffering, be it anxiety, depression or even self-loathing, are you in a position to sit back and observe it? To scrutinize it wholly, almost embracing it, to not run away from it but face it head-on. I do not mean to tolerate it, quite the opposite. Rather, can you fully observe it as soon as it arises? Can you make a deal with yourself that you do not have to tolerate an ounce of mental suffering? 
         </Text>
         <Text color="blackAlpha.800" fontWeight={500} mb={20} fontSize="xl" pt={3} pb={3}>
-            Uniting the evolution of spirit with the healing of the mental, emotional, and physical selves is how I define true 
-            holistic healing - body, mind and spirit. In my own life, I have experienced that releasing the invisible shackles of 
-            the past has enabled me to be in a state of equanimity which allows me to approach life with an open heart, curiosity, 
-            and excitement, even in the face of adversity. Being educated in psychology, guided meditation, somatic therapy, 
-            shadow integration, and psychosynthesis supports me in the work I do with clients and how I hold space. 
+            When you can observe it, observe it from every angle, as if it was the first time this suffering ever came to you. Observe it as if it was a rare species of bird never seen before, and you wanted to put it in a cage to observe and recount  every one of its details to a third party. 
         </Text>
       </Flex>
     )

@@ -27,6 +27,7 @@
     "framer-motion": "^4.1.17",
     "frontity": "^1.17.2",
     "mystic-seafoam-green": "file:packages/mystic-seafoam-green",
+    "react-calendly": "^4.1.0",
     "react-icons": "^4.6.0"
   }
 }

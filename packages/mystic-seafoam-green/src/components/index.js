@@ -17,6 +17,7 @@ import Hero from "./hero"
 import About from "./about"
 import Bio from "./bio"
 import Footer from "./footer"
+import Sessions from "./sessions"
 
 const Root = ({ state }) => {
     const data = state.source.get(state.router.link)
@@ -75,6 +76,9 @@ const Root = ({ state }) => {
             line-height: 1.55em;
             font-size: 17px;
           }
+          .calendly-inline-widget  {
+            height: 1000px !important;
+          }
         `}
         />
 
@@ -89,6 +93,9 @@ const Root = ({ state }) => {
         </Flex>
         <Flex direction="row" align="center" bg="brand.100">
           <Bio />
+        </Flex>
+        <Flex direction="row" align="center" bg="brand.700">
+          <Sessions />
         </Flex>
 
         <Footer />

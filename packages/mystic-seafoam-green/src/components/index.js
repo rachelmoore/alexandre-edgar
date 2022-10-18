@@ -1,9 +1,10 @@
 import React from "react"
-import { connect, Global, css } from "frontity"
+import { connect, Global, css, styled, Head } from "frontity";
 import {
   extendTheme,
   Flex,
-  Heading
+  Heading,
+  Box
 } from '@chakra-ui/react'
 import { ChakraProvider } from '@chakra-ui/react'
 import Link from "@frontity/components/link"
@@ -11,6 +12,14 @@ import Switch from "@frontity/components/switch"
 import List from "./list"
 import Post from "./post"
 import Page from "./page"
+import Navigation from "./navigation"
+import Hero from "./hero"
+import About from "./about"
+import Bio from "./bio"
+import Footer from "./footer"
+import Sessions from "./sessions"
+import Contact from "./contact"
+import HeroFooter from "./herofooter"
 
 const Root = ({ state }) => {
     const data = state.source.get(state.router.link)
@@ -18,42 +27,90 @@ const Root = ({ state }) => {
     const theme = extendTheme({
       colors: {
         brand: {
-          100: "#3AAEC2",
-          200: "#FD05E9",
-          300: "#6A3A80",
-          400: "#EE0300"
+          100: "#0257AA",
+          200: "#025DB0",
+          300: "#657C83",
+          400: "#CEDDF4",
+          500: "#CCC9C1",
+          600: "#CFAD8E",
+          700: "#FFFAF0",
+          800: "#F8E8D4"
         },
       },
     });
   
     return (
       <ChakraProvider theme={theme}>
+          <Head>
+            <title>Alexandre Edgar</title>
+            <meta
+              name="description"
+              content="You Are That"
+            />
+        </Head>
         <Global
-            styles={css`
-            html {
-                font-family: system-ui, Verdana, Arial, sans-serif;
+          styles={css`
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+          html {
+            font-family: "system-ui, Verdana, Arial, sans-serif";
+          }
+          li {
+            line-height: 1.85em;
+          }
+          iframe {
+            width: 100% !important;
+          }
+          figure {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            @media (max-width: 600px) {
+              max-width: 90vw;
+              margin-top: 40px;
+              margin-bottom: 40px;
             }
-            `}
+          }
+          li {
+            margin-bottom: 10px;
+            line-height: 1.55em;
+            font-size: 17px;
+          }
+          .calendly-inline-widget  {
+            height: 1000px !important;
+          }
+        `}
         />
-        <Flex direction="row">
-          <Heading>Hello Alexandre</Heading>
-          <p>Current URL: {state.router.link}</p>
+
+        <Navigation />
+        {state.router.link === "/" &&
+          <Hero />
+        }
+
+        <Box width="100%" height="5px" bg="brand.100" />
+        <Flex direction="column" align="center" bg="brand.700">
+          <About />
         </Flex>
-        <nav>
-          <Link link="/">Home</Link>
-          <br />
-          <Link link="/page/2">More posts</Link>
-          <br />
-          <Link link="/about-us">About Us</Link>
-        </nav>
-        <hr />
-        <main>
-          <Switch>
-            <List when={data.isArchive} />
-            <Post when={data.isPost} />
-            <Page when={data.isPage} />
-          </Switch>
-        </main>
+        <Flex direction="row" align="center" bg="brand.100">
+          <Bio />
+        </Flex>
+        <Flex direction="row" align="center" bg="brand.700">
+          <Sessions />
+        </Flex>
+        <Flex direction="column" align="center" bg="brand.100">
+          <Contact />
+        </Flex>
+        <HeroFooter />
+        <Box width="100%" height="2px" bg="brand.700" />
+        <Footer />
+
+        {/* <Switch>
+          <List when={data.isArchive} />
+          <Post when={data.isPost} />
+          <Page when={data.isPage} />
+        </Switch> */}
       </ChakraProvider>
     )
   }

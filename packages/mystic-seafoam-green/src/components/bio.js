@@ -1,17 +1,19 @@
 import React from "react";
+import { styled } from "frontity"
 import {
   Heading,
   Text,
   Flex,
+  Box,
   Image
 } from '@chakra-ui/react';
 import alexandrecat from "../assets/alexandrecat.png"
 
 function Bio() {
     return (
-        <>
+        <Flex direction="row" width="100%" height="100%">
             <Flex direction="column" width="50%">
-                <Image src={alexandrecat} />
+                <Image src={alexandrecat} height="100%" style={{objectFit: "cover"}} />
             </Flex>
 
             <Flex direction="column" width="50%" padding={20}>
@@ -40,7 +42,7 @@ function Bio() {
                     After this came several years of solitude and deepening into presence. 
                 </Text>
             </Flex>
-        </>
+        </Flex>
     )
   }
 

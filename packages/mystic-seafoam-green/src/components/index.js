@@ -3,7 +3,8 @@ import { connect, Global, css, styled, Head } from "frontity";
 import {
   extendTheme,
   Flex,
-  Heading
+  Heading,
+  Box
 } from '@chakra-ui/react'
 import { ChakraProvider } from '@chakra-ui/react'
 import Link from "@frontity/components/link"
@@ -13,6 +14,7 @@ import Post from "./post"
 import Page from "./page"
 import Navigation from "./navigation"
 import Hero from "./hero"
+import About from "./about"
 
 const Root = ({ state }) => {
     const data = state.source.get(state.router.link)
@@ -20,10 +22,14 @@ const Root = ({ state }) => {
     const theme = extendTheme({
       colors: {
         brand: {
-          100: "#0257A4",
-          200: "#FD05E9",
-          300: "#6A3A80",
-          400: "#EE0300"
+          100: "#0257AA",
+          200: "#025DB0",
+          300: "#657C83",
+          400: "#CEDDF4",
+          500: "#CCC9C1",
+          600: "#CFAD8E",
+          700: "#FFFAF0",
+          800: "#F8E8D4"
         },
       },
     });
@@ -75,11 +81,16 @@ const Root = ({ state }) => {
           <Hero />
         }
 
-        <Switch>
+        <Box width="100%" height="37px" bg="brand.100" />
+        <Flex direction="column" align="center" bg="brand.700">
+          <About />
+        </Flex>
+
+        {/* <Switch>
           <List when={data.isArchive} />
           <Post when={data.isPost} />
           <Page when={data.isPage} />
-        </Switch>
+        </Switch> */}
       </ChakraProvider>
     )
   }

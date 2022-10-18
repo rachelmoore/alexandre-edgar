@@ -18,6 +18,7 @@ import About from "./about"
 import Bio from "./bio"
 import Footer from "./footer"
 import Sessions from "./sessions"
+import Contact from "./contact";
 
 const Root = ({ state }) => {
     const data = state.source.get(state.router.link)
@@ -97,6 +98,10 @@ const Root = ({ state }) => {
         <Flex direction="row" align="center" bg="brand.700">
           <Sessions />
         </Flex>
+        <Flex direction="column" align="center" bg="brand.100">
+          <Contact />
+        </Flex>
+        <Box width="100%" height="2px" bg="brand.700" />
 
         <Footer />
 

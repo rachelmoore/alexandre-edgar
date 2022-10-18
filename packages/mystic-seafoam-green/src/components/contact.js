@@ -62,17 +62,17 @@ function Contact() {
                     <form onSubmit={handleSubmit(onFormSubmit)}> 
                     <FormControl id="fromName">
                         <FormLabel htmlFor="fromName" color="brand.700" fontSize="lg">Name:</FormLabel>
-                        <Input name="fromName" {...register("fromName", { required: "This is required."})} />
+                        <Input name="fromName" color="brand.700" fontSize="lg" {...register("fromName", { required: "This is required."})} />
                         <ErrorMessage errors={errors} name="fromName" render={({ message }) => <p className="error-message"><BiErrorCircle /> {message} </p>}/>
                     </FormControl>
                     <FormControl id="replyTo" mt={5}>
                         <FormLabel htmlFor="replyTo" color="brand.700" fontSize="lg">Email:</FormLabel>
-                        <Input name="replyTo" {...register("replyTo", { required: "This is required."})} />
+                        <Input name="replyTo" color="brand.700" fontSize="lg" {...register("replyTo", { required: "This is required."})} />
                         <ErrorMessage errors={errors} name="replyTo" render={({ message }) => <p className="error-message"><BiErrorCircle /> {message} </p>}/>
                     </FormControl>
                     <FormControl id="message" mt={5}>
                         <FormLabel htmlFor="message" color="brand.700" fontSize="lg">Message:</FormLabel>
-                        <Textarea name="message" {...register("message")} />
+                        <Textarea name="message" color="brand.700" fontSize="lg" {...register("message")} />
                         <ErrorMessage errors={errors} name="message" render={({ message }) => <p className="error-message"><BiErrorCircle /> {message} </p>}/>
                     </FormControl>
                     <Button 

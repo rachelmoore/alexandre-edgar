@@ -1,48 +1,43 @@
 import React from "react";
 import {
-  Button,
   Heading,
   Text,
   Flex,
-  Image,
-  Icon,
-  List,
-  ListItem,
-  ListIcon
+  Image
 } from '@chakra-ui/react';
-import { BsTrophy } from "react-icons/bs"
-import { RiScales3Fill } from "react-icons/ri"
-import { FaYinYang } from "react-icons/fa"
-import { WiStars } from "react-icons/wi";
-import tcsitebrantbarn from "../assets/tcsitebrantbarn.jpg"
 import alexandrecat from "../assets/alexandrecat.png"
 
-
 function Bio() {
-  
     return (
         <>
             <Flex direction="column" width="50%">
                 <Image src={alexandrecat} />
             </Flex>
 
-            <Flex direction="column" width="50%" padding={5}>
-                <Heading size="2xl" mt={10} mb={10} color="brand.400">Meet Eluña</Heading>
-                <Text fontWeight={500} mb="20px" fontSize="xl" pt={3} pb={3} color="brand.400">
-                    Eluña Antle is a certified Psychospiritual Life Coach, Intuitive Transpersonal Guide, and is the founder of Emerging Presence. She has a background in Ayurveda, Qigong, and psychology. 
-                    Her specialties include helping others to integrate, heal, and release the past, and facilitate the cathartic release of emotions in a safe and accepting space.
+            <Flex direction="column" width="50%" padding={20}>
+                <Heading size="2xl" mt={10} mb={10} color="brand.700">About Alexandre</Heading>
+                <Text fontWeight={500} mb="20px" fontSize="xl" pt={3} pb={3} color="brand.700">
+                    I grew up in the Burgundy region of France of an American family. 
                 </Text>
 
-                <Text fontWeight={500} mb="20px" fontSize="xl" pt={3} pb={3} color="brand.400">
-                    Eluña’s work emphasizes Self-empowerment, practical wisdom, and regenerative change. Regenerative change is naturally healing which results in shifts of perception, ways of relating, 
-                    and patterns of thinking. Through various exercises, practices, and techniques, Eluña helps clients to ground these paradigm shifts into the real world allowing them to stand in their power, 
-                    reclaim their sovereignty, and emotionally and spiritually level up.
+                <Text fontWeight={500} mb="20px" fontSize="xl" pt={3} pb={3} color="brand.700">
+                    Growing up in a post-enlightenment society made me realize the irony of that term. The set of ideas that were meant to take humanity out of the darkness of dogma have now crystallized into a new form of dogma. 
+                    This new dogma is currently a radical humanist postmodernism rooted in dogmatic adhesion to Darwinism, validated by the new church of Science. 
                 </Text>
 
-                <Text fontWeight={500} mb="20px" fontSize="xl" pt={3} pb={3} color="brand.400">
-                    One of Eluña's life purposes is to help others experience their Soul’s emerging presence. She is awestruck by the depths and heights people are capable of reaching with the help of a guide.  
-                    Eluña recognizes each person as a radiant, creative, and dynamic being, each of whom have distinctive wants and needs. This is why she curates a custom coaching experience for each client. 
-                    Through a unique admissions process, she evaluates each client in-depth to offer the most aligned experience possible.
+                <Text fontWeight={500} mb="20px" fontSize="xl" pt={3} pb={3} color="brand.700">
+                    Growing up in a society that idolizes rationality above all left a strong lack in my sensibilities for wisdom which emerges out of emotion.
+                    As water can never rise above its source, rational intellect too can never rise above its own Source. 
+                </Text>
+
+                <Text fontWeight={500} mb="20px" fontSize="xl" pt={3} pb={3} color="brand.700">
+                    While working in the business world in New York, I began to read a panoply of books around Jungian psychology and other esoteric traditions. 
+                    I left the business world to study Psychology in the United Kingdom where I also became a born again Christian, adult baptism and all. 
+                </Text>
+
+                <Text fontWeight={500} mb="20px" fontSize="xl" pt={3} pb={3} color="brand.700">
+                    This period ended with a profound realization of my true nature which I realized was hinted at in recurring dreams I had since I was 5 years old, notably hinting at its date.
+                    After this came several years of solitude and deepening into presence. 
                 </Text>
             </Flex>
         </>

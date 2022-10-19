@@ -18,7 +18,7 @@ function Bio() {
             height="100%"
         >
             <Flex direction="column" width={{base: "100%", lg: "50%"}}>
-                <Image src={alexandrecat} height="100%" style={{objectFit: "cover"}} />
+                <Image src={alexandrecat} height={{base: "fit-content", lg: "100%"}} maxHeight={{base: "600px", lg: "100%" }} style={{objectFit: "cover"}} />
             </Flex>
 
             <Flex direction="column" width={{base: "100%", lg: "50%"}} padding={{base: 5, lg: 20}}>

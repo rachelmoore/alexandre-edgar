@@ -43,7 +43,7 @@ function Sessions() {
             </Flex>
 
             <Flex id="calendly" direction="column" height="1000px" width={{base: "100%", lg: "50%"}} padding={{base: 5, lg: 20}}>
-                <InlineWidget id="calendly-widget" url="https://calendly.com/rachelanneedgar/30min"/>
+                <InlineWidget id="calendly-widget" url="https://calendly.com/alexandreedgar/30min"/>
             </Flex>
         </Flex>
     )

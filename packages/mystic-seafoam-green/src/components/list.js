@@ -16,8 +16,8 @@ const List = ({ state, libraries }) => {
       {data.items.map((item) => {
         const post = state.source[item.type][item.id]
         return (
-          <Flex direction="column">
-            <Link key={item.id} link={post.link}>
+          <Flex direction="column" key={item.id} >
+            <Link link={post.link}>
               <Heading size="2xl" mt={10} mb={5} color="brand.100">
                 {post.title.rendered}
               </Heading>

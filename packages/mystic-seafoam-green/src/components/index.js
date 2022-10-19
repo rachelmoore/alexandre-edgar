@@ -20,9 +20,11 @@ import Footer from "./footer"
 import Sessions from "./sessions"
 import Contact from "./contact"
 import HeroFooter from "./herofooter"
+import Writings from "./writings"
 
 const Root = ({ state }) => {
-    const data = state.source.get(state.router.link)
+    const data = state.source.get(state.router.link);
+    const isWritings = state.router.link.startsWith("/writings");
 
     const theme = extendTheme({
       colors: {
@@ -106,6 +108,7 @@ const Root = ({ state }) => {
 
         <Switch>
           {/* <List when={data.isArchive} /> */}
+          <List when={data.isArchive} />
           <Post when={data.isPost} />
           <Page when={data.isPage} />
         </Switch>

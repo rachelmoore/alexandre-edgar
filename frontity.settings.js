@@ -15,7 +15,9 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "http://alexandreedgar.technocowgirl.com/"
+          "api": "http://alexandreedgar.technocowgirl.com/wp-json",
+          "url": "http://alexandreedgar.technocowgirl.com/",
+          "postsPage": "/writings"
         }
       }
     },

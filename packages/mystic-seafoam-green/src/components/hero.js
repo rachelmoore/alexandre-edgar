@@ -1,12 +1,10 @@
 
 import {
     Flex,
-    Box,
-    Heading,
     Text
   } from "@chakra-ui/react"
   import React from "react"
-  import { connect, styled, Head } from "frontity"
+  import { connect, styled } from "frontity"
   import Link from "@frontity/components/link"
   import awesite2 from '../assets/awesite2.png';
   
@@ -25,7 +23,6 @@ import {
       return (
         <Header isPostType={data.isPostType} isPage={data.isPage}>
             <Flex height="75%" direction="column" alignItems="center" justifyContent="center">
-                {/* <Heading size="lg" color="white">Alexandre Edgar</Heading> */}
             </Flex>
         </Header>
       )
@@ -41,6 +38,9 @@ import {
     background-size: 100%; 
     background-repeat: 'no-repeat';
     height: 700px;
+    @media (max-width: 768px) {
+      height: 400px;
+    }
     h1 {
         color: #FFC300;
     }

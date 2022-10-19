@@ -17,9 +17,12 @@ const Post = ({ state }) => {
       direction="column"
       width="100%" 
       height="100%"
-      padding={{base: 5, lg: 20}}
+      pl={{base: 5, lg: 20}}
+      pr={{base: 5, lg: 20}}
+      mt={5}
+      mb={5}
     >
-      <Heading size="2xl" mt={10} mb={10} color="blackAlpha.800">
+      <Heading size="2xl" mt={10} mb={10} pl="10px" color="blackAlpha.800">
         {post.title.rendered}
       </Heading>
       {/* <p>
@@ -30,7 +33,7 @@ const Post = ({ state }) => {
         <strong>Author: </strong>
         {author.name}
       </p> */}
-      <Text fontWeight={500} mb={8} fontSize="lg" color="blackAlpha.800">
+      <Text fontWeight={500} mb={8} fontSize="xl" color="blackAlpha.800">
         <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
       </Text>
     </Flex>

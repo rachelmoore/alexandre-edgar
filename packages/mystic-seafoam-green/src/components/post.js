@@ -7,6 +7,7 @@ import {
   Flex,
   HStack
 } from '@chakra-ui/react';
+import Loading from "./loading";
 
 const Post = ({ state, libraries }) => {
   const data = state.source.get(state.router.link)
@@ -16,43 +17,49 @@ const Post = ({ state, libraries }) => {
 
   const formattedDate = dayjs(post.date).format("MMMM DD, YYYY")
 
-  return (
-    <Flex 
-      direction="column"
-      width="100%" 
-      height="100%"
-      padding={{base: 5, lg: 20}}
-      bg="brand.700"
-    >
-    <Heading size="2xl" mt={10} mb={5} color="brand.100">
-      <Html2React html={post.title.rendered} />
-    </Heading>
-      <HStack mb={2}>
-        <Text size="lg" fontWeight="600" color="blackAlpha.800">
-          Posted: 
-        </Text>
-        <Text size="lg" color="blackAlpha.800">
-          {formattedDate}
-        </Text>
-      </HStack>
-      <HStack mb={5}>
-        <Text size="lg" fontWeight="600" color="blackAlpha.800">
-          Author:
-        </Text>
-        <Text size="lg" color="blackAlpha.800">
-          {author.name}
-        </Text>
-      </HStack>
-      <Flex direction="column">
-        {state.source.attachment[post.featured_media] &&
-          <Image src={state.source.attachment[post.featured_media].source_url} />
-        }
-        <Text fontWeight={500} mb={8} fontSize="lg" color="blackAlpha.800">
-          <Html2React html={post.content.rendered} />
-        </Text>
+  if (data.isFetching) {
+    return <Loading />
+  }
+
+  if (!data.isFetching) {
+    return (
+      <Flex 
+        direction="column"
+        width="100%" 
+        height="100%"
+        padding={{base: 5, lg: 20}}
+        bg="brand.700"
+      >
+      <Heading size="2xl" mt={10} mb={5} color="brand.100">
+        <Html2React html={post.title.rendered} />
+      </Heading>
+        <HStack mb={2}>
+          <Text size="lg" fontWeight="600" color="blackAlpha.800">
+            Posted: 
+          </Text>
+          <Text size="lg" color="blackAlpha.800">
+            {formattedDate}
+          </Text>
+        </HStack>
+        <HStack mb={5}>
+          <Text size="lg" fontWeight="600" color="blackAlpha.800">
+            Author:
+          </Text>
+          <Text size="lg" color="blackAlpha.800">
+            {author.name}
+          </Text>
+        </HStack>
+        <Flex direction="column">
+          {state.source.attachment[post.featured_media] &&
+            <Image src={state.source.attachment[post.featured_media].source_url} />
+          }
+          <Text fontWeight={500} mb={8} fontSize="lg" color="blackAlpha.800">
+            <Html2React html={post.content.rendered} />
+          </Text>
+        </Flex>
       </Flex>
-    </Flex>
-  )
+    )
+  }
 }
 
 export default connect(Post)

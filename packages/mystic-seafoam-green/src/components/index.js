@@ -105,7 +105,7 @@ const Root = ({ state }) => {
         }
 
         <Switch>
-          <List when={data.isArchive} />
+          {/* <List when={data.isArchive} /> */}
           <Post when={data.isPost} />
           <Page when={data.isPage} />
         </Switch>

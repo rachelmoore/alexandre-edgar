@@ -20,7 +20,7 @@ import Footer from "./footer"
 import Sessions from "./sessions"
 import Contact from "./contact"
 import HeroFooter from "./herofooter"
-import Writings from "./writings"
+import Loading from "./loading";
 
 const Root = ({ state }) => {
     const data = state.source.get(state.router.link);
@@ -107,7 +107,7 @@ const Root = ({ state }) => {
         }
 
         <Switch>
-          {/* <List when={data.isArchive} /> */}
+          <Loading when={data.isFetching} />
           <List when={data.isArchive} />
           <Post when={data.isPost} />
           <Page when={data.isPage} />

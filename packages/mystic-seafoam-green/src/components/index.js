@@ -85,32 +85,34 @@ const Root = ({ state }) => {
         />
 
         <Navigation />
+        <Hero />
+        <Box width="100%" height="5px" bg="brand.100" />
         {state.router.link === "/" &&
-          <Hero />
+          <>
+            <Flex direction="column" align="center" bg="brand.700">
+              <About />
+            </Flex>
+            <Flex direction="row" align="center" bg="brand.100">
+              <Bio />
+            </Flex>
+            <Flex direction="row" align="center" bg="brand.700">
+              <Sessions />
+            </Flex>
+            <Flex direction="column" align="center" bg="brand.100">
+              <Contact />
+            </Flex>
+          </>
         }
 
-        <Box width="100%" height="5px" bg="brand.100" />
-        <Flex direction="column" align="center" bg="brand.700">
-          <About />
-        </Flex>
-        <Flex direction="row" align="center" bg="brand.100">
-          <Bio />
-        </Flex>
-        <Flex direction="row" align="center" bg="brand.700">
-          <Sessions />
-        </Flex>
-        <Flex direction="column" align="center" bg="brand.100">
-          <Contact />
-        </Flex>
-        <HeroFooter />
-        <Box width="100%" height="2px" bg="brand.700" />
-        <Footer />
-
-        {/* <Switch>
+        <Switch>
           <List when={data.isArchive} />
           <Post when={data.isPost} />
           <Page when={data.isPage} />
-        </Switch> */}
+        </Switch>
+
+        <HeroFooter />
+        <Box width="100%" height="2px" bg="brand.700" />
+        <Footer />
       </ChakraProvider>
     )
   }

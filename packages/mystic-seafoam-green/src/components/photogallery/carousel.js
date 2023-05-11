@@ -50,6 +50,7 @@ export const CarouselIconButton = (props) => (
     {...props}
   />
 )
+
 export const useCarousel = (options) => {
   const defaultOptions = {
     selector: '.chakra-carousel__slide',

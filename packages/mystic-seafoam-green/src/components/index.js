@@ -21,6 +21,7 @@ import Sessions from "./sessions"
 import Contact from "./contact"
 import HeroFooter from "./herofooter"
 import Loading from "./loading";
+import PhotoGallery from "./photogallery/photogallery";
 
 const Root = ({ state }) => {
     const data = state.source.get(state.router.link);
@@ -87,19 +88,13 @@ const Root = ({ state }) => {
         />
 
         <Navigation />
-        <Hero />
         <Box width="100%" height="5px" bg="brand.100" />
         {state.router.link === "/" &&
           <>
-            <Flex direction="column" align="center" bg="brand.700">
-              <About />
-            </Flex>
-            <Flex direction="row" align="center" bg="brand.100">
-              <Bio />
-            </Flex>
-            <Flex direction="row" align="center" bg="brand.700">
+            <PhotoGallery />
+            {/* <Flex direction="row" align="center" bg="brand.700">
               <Sessions />
-            </Flex>
+            </Flex> */}
             <Flex direction="column" align="center" bg="brand.100">
               <Contact />
             </Flex>
@@ -113,8 +108,8 @@ const Root = ({ state }) => {
           <Page when={data.isPage} />
         </Switch>
 
-        <HeroFooter />
-        <Box width="100%" height="2px" bg="brand.700" />
+        {/* <HeroFooter />
+        <Box width="100%" height="2px" bg="brand.700" /> */}
         <Footer />
       </ChakraProvider>
     )

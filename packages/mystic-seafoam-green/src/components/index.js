@@ -30,8 +30,8 @@ const Root = ({ state }) => {
     const theme = extendTheme({
       colors: {
         brand: {
-          100: "#0257AA",
-          200: "#025DB0",
+          100: "RGBA(0, 0, 0, 0.80)",
+          200: "RGBA(255, 255, 255, 0.06)",
           300: "#657C83",
           400: "#CEDDF4",
           500: "#CCC9C1",
@@ -88,10 +88,12 @@ const Root = ({ state }) => {
         />
 
         <Navigation />
-        <Box width="100%" height="5px" bg="brand.100" />
+        <Box width="100%" height="5px" />
         {state.router.link === "/" &&
           <>
+    
             <PhotoGallery />
+
             {/* <Flex direction="row" align="center" bg="brand.700">
               <Sessions />
             </Flex> */}
@@ -100,7 +102,6 @@ const Root = ({ state }) => {
             </Flex>
           </>
         }
-
         <Switch>
           <Loading when={data.isFetching} />
           <List when={data.isArchive} />

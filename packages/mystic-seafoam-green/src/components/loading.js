@@ -8,7 +8,7 @@ const Loading = () => {
         width="100%" 
         height="100%"
         padding={{base: 5, lg: 20}}
-        bg="brand.700"
+        bg="brand.200"
         justifyContent="center"
         alignItems="center"
       >

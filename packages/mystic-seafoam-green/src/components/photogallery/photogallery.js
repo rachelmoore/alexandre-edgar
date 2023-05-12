@@ -6,6 +6,7 @@ function PhotoGallery() {
   return (
     <Box
       maxW="3xl"
+      // height="90vh"
       mx="auto"
       px={{
         base: '4',

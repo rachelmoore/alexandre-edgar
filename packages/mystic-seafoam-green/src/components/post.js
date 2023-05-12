@@ -27,8 +27,9 @@ const Post = ({ state, libraries }) => {
         direction="column"
         width="100%" 
         height="100%"
+        minHeight="85vh"
         padding={{base: 5, lg: 20}}
-        bg="brand.700"
+        bg="brand.200"
       >
       <Heading size="2xl" mt={10} mb={5} color="brand.100">
         <Html2React html={post.title.rendered} />

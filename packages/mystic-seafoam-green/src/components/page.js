@@ -24,6 +24,7 @@ const Post = ({ state, libraries }) => {
         direction="column"
         width="100%" 
         height="100%"
+        minHeight="85vh"
         pl={{base: 5, lg: 20}}
         pr={{base: 5, lg: 20}}
         mt={5}

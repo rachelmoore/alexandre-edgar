@@ -16,7 +16,7 @@ export const images = [
       src: beaune,
       alt: 'Beaune',
       aspectRatio: 4 / 3, 
-      objectFit: "cover",
+      objectFit: "contain !important",
     },
     {
       id: '02',
@@ -37,7 +37,7 @@ export const images = [
       src: goldengatebridge,
       alt: 'Golden Gate Bridge',
       aspectRatio: 4 / 3, 
-      objectFit: "cover",
+      objectFit: "contain !important",
     },
     {
       id: '05',
@@ -51,14 +51,14 @@ export const images = [
       src: oceanrocks,
       alt: 'Ocean rocks',
       aspectRatio: 4 / 3, 
-      objectFit: "cover",
+      objectFit: "contain !important",
     },
     {
       id: '07',
       src: peacock,
       alt: 'Peacock',
       aspectRatio: 4 / 3, 
-      objectFit: "cover",
+      objectFit: "contain !important",
     },
     {
       id: '08',

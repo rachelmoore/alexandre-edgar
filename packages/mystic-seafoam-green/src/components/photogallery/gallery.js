@@ -12,6 +12,7 @@ import {
   import { useState } from 'react'
   import { IoChevronBackOutline, IoChevronForwardOutline } from 'react-icons/io5'
   import { Carousel, CarouselSlide, useCarousel } from './carousel'
+  import "keen-slider/keen-slider.min.css"
   
   export const Gallery = (props) => {
     const { images, rootProps } = props // 9 / 16

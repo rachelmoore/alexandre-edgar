@@ -1,6 +1,7 @@
 import { Box, Flex, IconButton, useColorModeValue } from '@chakra-ui/react'
 import { useKeenSlider } from 'keen-slider/react' // using version 6.6.10
 import { forwardRef } from 'react'
+import "keen-slider/keen-slider.min.css"
 
 export const Carousel = forwardRef(function Carousel(props, ref) {
   return (
@@ -51,9 +52,20 @@ export const CarouselIconButton = (props) => (
   />
 )
 
+// const AdaptiveHeight = (slider) => {
+//   function updateHeight() {
+//     slider.container.style.height =
+//       slider.slides[slider.track.details.rel].offsetHeight + "px"
+//   }
+//   slider.on("created", updateHeight)
+//   slider.on("slideChanged", updateHeight)
+//   console.log("I TRIED")
+// }
+
 export const useCarousel = (options) => {
   const defaultOptions = {
     selector: '.chakra-carousel__slide',
+    widthOrHeight: 100
   }
   return useKeenSlider({
     ...defaultOptions,

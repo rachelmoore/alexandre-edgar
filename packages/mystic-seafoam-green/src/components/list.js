@@ -18,13 +18,13 @@ const List = ({ state, libraries }) => {
 
   if (!data.isFetching) {
     return (
-      <Flex direction="column" align="center" bg="brand.700" padding={{base: 5, lg: 20}}>
+      <Flex direction="column" align="center" bg="brand.200" padding={{base: 5, lg: 10}}>
         {data.items.map((item) => {
           const post = state.source[item.type][item.id]
           return (
             <Flex direction="column" key={item.id} >
               <Link link={post.link}>
-                <Heading size="2xl" mt={10} mb={5} color="brand.100">
+                <Heading size="lg" mt={5} mb={5} color="brand.100">
                   {post.title.rendered}
                 </Heading>
               </Link>

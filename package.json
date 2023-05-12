@@ -28,6 +28,7 @@
     "emailjs-com": "^3.2.0",
     "framer-motion": "^4.1.17",
     "frontity": "^1.17.2",
+    "keen-slider": "^6.8.5",
     "mystic-seafoam-green": "file:packages/mystic-seafoam-green",
     "react-calendly": "^4.1.0",
     "react-hook-form": "^7.37.0",

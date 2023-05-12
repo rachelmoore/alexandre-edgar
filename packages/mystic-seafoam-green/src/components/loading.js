@@ -7,6 +7,7 @@ const Loading = () => {
         direction="column"
         width="100%" 
         height="100%"
+        minHeight="85vh"
         padding={{base: 5, lg: 20}}
         bg="brand.200"
         justifyContent="center"

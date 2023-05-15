@@ -2,7 +2,7 @@ const settings = {
   "name": "alexandre-edgar",
   "state": {
     "frontity": {
-      "url": "http://alexandreedgar.technocowgirl.com/",
+      "url": "https://gph.fxx.mybluehost.me/",
       "title": "Alexandre Edgar",
       "description": "You Are That"
     }
@@ -15,8 +15,8 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "api": "http://alexandreedgar.technocowgirl.com/wp-json",
-          "url": "http://alexandreedgar.technocowgirl.com/",
+          "api": "https://gph.fxx.mybluehost.me/wp-json",
+          "url": "https://gph.fxx.mybluehost.me/",
           "postsPage": "/writings"
         }
       }

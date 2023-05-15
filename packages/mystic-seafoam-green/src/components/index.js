@@ -22,6 +22,7 @@ import Contact from "./contact"
 import HeroFooter from "./herofooter"
 import Loading from "./loading";
 import PhotoGallery from "./photogallery/photogallery";
+import Carousel from "./carousel/carousel";
 
 const Root = ({ state }) => {
     const data = state.source.get(state.router.link);
@@ -92,7 +93,8 @@ const Root = ({ state }) => {
         {state.router.link === "/" &&
           <>
     
-            <PhotoGallery />
+            {/* <PhotoGallery /> */}
+            <Carousel />
 
             {/* <Flex direction="row" align="center" bg="brand.700">
               <Sessions />

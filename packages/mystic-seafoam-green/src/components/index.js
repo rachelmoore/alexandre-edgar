@@ -1,9 +1,15 @@
 import React from "react"
-import { connect, Global, css, styled, Head } from "frontity";
+import { 
+  connect, 
+  Global, 
+  css, 
+  Head, 
+  // styled, 
+} from "frontity";
 import {
   extendTheme,
   Flex,
-  Heading,
+  // Heading,
   Box
 } from '@chakra-ui/react'
 import { ChakraProvider } from '@chakra-ui/react'

@@ -14,14 +14,42 @@ import {
   import { IoChevronBackOutline, IoChevronForwardOutline } from 'react-icons/io5'
   import { useKeenSlider } from 'keen-slider/react' // using version 6.6.10
   import { images } from './data'
+  import beaune from "../../assets/carousel/beaune.jpeg"
+  import bwtree from "../../assets/carousel/bwtree.jpeg"
+  import crow from "../../assets/carousel/crow.jpg"
+  import goldengatebridge from "../../assets/carousel/goldengatebridge.jpeg"
+  import kitten from "../../assets/carousel/kitten.jpg"
+  import oceanrocks from "../../assets/carousel/oceanrocks.jpg"
+  import peacock from "../../assets/carousel/peacock.jpg"
+  import ruby from "../../assets/carousel/ruby.jpg"
+  import teacup from "../../assets/carousel/teacup.jpg"
+  import vichytree from "../../assets/carousel/vichytree.jpg"
+  import vineyard from "../../assets/carousel/vineyard.jpg"
   import "keen-slider/keen-slider.min.css"
+
+  const AdaptiveHeight = (slider) => {
+    function updateHeight() {
+      slider.container.style.height =
+        slider.slides[slider.track.details.rel].offsetHeight + "px"
+    }
+    slider.on("created", updateHeight)
+    slider.on("slideChanged", updateHeight)
+  }
 
   function Carousel() {
     const [currentSlide, setCurrentSlide] = useState(0)
-    const [ref, slider] = useKeenSlider({
-      selector: '.chakra-carousel__slide',
-      slideChanged: (slider) => setCurrentSlide(slider.track.details.rel),
-    })
+    // const [ref, slider] = useKeenSlider({
+    //     selector: '.chakra-carousel__slide',
+    //     slideChanged: (slider) => setCurrentSlide(slider.track.details.rel),
+    //   })
+    const [ref, slider] = useKeenSlider(
+        {
+          selector: '.chakra-carousel__slide',
+          initial: 0,
+          slideChanged: (slider) => setCurrentSlide(slider.track.details.rel),
+        },
+        // [AdaptiveHeight]
+      )
       
     const hasPrevious = currentSlide !== 0
     const hasNext = currentSlide < images.length - 1
@@ -37,12 +65,17 @@ import {
             },
           }}
         >
+
           <Flex
             ref={ref}
             overflow="hidden"
             position="relative"
             userSelect="none"
         >
+                {/* <Image src={beaune} fallback={<Skeleton />} />
+                <Image src={bwtree} fallback={<Skeleton />} />
+                <Image src={crow} fallback={<Skeleton />} /> */}
+ 
             {images.map((image, i) => (
               <CarouselSlide key={i}>
                 <AspectRatio
@@ -86,8 +119,8 @@ import {
               <Circle key={index} size="2" bg={currentSlide === index ? 'white' : 'whiteAlpha.400'} />
             ))}
           </HStack>
-        </Box>
-      </Stack>
+         </Box>
+       </Stack>
     )
   }
   const CarouselIconButton = (props) => (

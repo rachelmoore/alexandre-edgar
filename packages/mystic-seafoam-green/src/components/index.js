@@ -99,7 +99,8 @@ const Root = ({ state }) => {
         {state.router.link === "/" &&
           <>
   
-            <Carousel />
+            {/* <Carousel /> */}
+            <PhotoGallery />
 
             {/* <Flex direction="row" align="center" bg="brand.700">
               <Sessions />

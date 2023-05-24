@@ -19,15 +19,16 @@ import List from "./list"
 import Post from "./post"
 import Page from "./page"
 import Navigation from "./navigation"
+import Footer from "./footer"
+import Contact from "./contact"
+import Carousel from "./carousel/carousel";
+import PhotoGallery from "./photogallery/photogallery";
 import Hero from "./hero"
 import About from "./about"
 import Bio from "./bio"
-import Footer from "./footer"
 import Sessions from "./sessions"
-import Contact from "./contact"
 import HeroFooter from "./herofooter"
 import Loading from "./loading";
-import PhotoGallery from "./photogallery/photogallery";
 
 const Root = ({ state }) => {
     const data = state.source.get(state.router.link);
@@ -97,7 +98,8 @@ const Root = ({ state }) => {
         <Box width="100%" height="5px" />
         {state.router.link === "/" &&
           <>
-    
+  
+            {/* <Carousel /> */}
             <PhotoGallery />
 
             {/* <Flex direction="row" align="center" bg="brand.700">

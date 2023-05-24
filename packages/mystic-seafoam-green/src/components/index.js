@@ -4,12 +4,12 @@ import {
   Global, 
   css, 
   Head, 
-  // styled, 
+  styled, 
 } from "frontity";
 import {
   extendTheme,
   Flex,
-  // Heading,
+  Heading,
   Box
 } from '@chakra-ui/react'
 import { ChakraProvider } from '@chakra-ui/react'
@@ -108,12 +108,12 @@ const Root = ({ state }) => {
             </Flex>
           </>
         }
-        <Switch>
+        {/* <Switch>
           <Loading when={data.isFetching} />
-          {/* <List when={data.isArchive} /> */}
+          <List when={data.isArchive} />
           <Post when={data.isPost} />
           <Page when={data.isPage} />
-        </Switch>
+        </Switch> */}
 
         {/* <HeroFooter />
         <Box width="100%" height="2px" bg="brand.700" /> */}

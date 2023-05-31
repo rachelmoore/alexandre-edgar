@@ -55,6 +55,7 @@ function Navigation() {
                           <Link link="/"><Text fontSize="xl" mb={2}>Home</Text></Link>
                           {/* <Link link="/about"><Text fontSize="xl" mb={2}>My Process</Text></Link> */}
                           <Link link="/about-alexandre"><Text fontSize="xl" mb={2}>About Alexandre</Text></Link>
+                          <Link link="/blog"><Text fontSize="xl" mb={2}>Blog</Text></Link>
                           {/* <Link link="/category/horses"><Text fontSize="xl" mb={2}>Testimonials</Text></Link>
                           <Link link="/category/horses"><Text fontSize="xl" mb={2}>Services</Text></Link>
                           <Link link="/category/horses"><Text fontSize="xl" mb={2}>Packages</Text></Link>

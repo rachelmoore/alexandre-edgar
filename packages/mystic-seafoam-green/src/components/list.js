@@ -18,7 +18,14 @@ const List = ({ state, libraries }) => {
 
   if (!data.isFetching) {
     return (
-      <Flex direction="column" align="center" bg="brand.200" padding={{base: 5, lg: 10}}>
+      <Flex 
+      direction="column"
+      width="100%" 
+      height="100%"
+      minHeight="85vh"
+      padding={{base: 5, lg: 20}}
+      bg="brand.200"
+    >
         {data.items.map((item) => {
           const post = state.source[item.type][item.id]
           return (

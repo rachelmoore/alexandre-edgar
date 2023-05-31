@@ -71,9 +71,6 @@ const Root = ({ state }) => {
           li {
             line-height: 1.85em;
           }
-          p {
-            margin-top: 1em;
-          }
           iframe {
             width: 100% !important;
           }
@@ -90,6 +87,9 @@ const Root = ({ state }) => {
             margin-bottom: 10px;
             line-height: 1.55em;
             font-size: 17px;
+          }
+          .page-text p {
+            margin-top: 1em;
           }
           .calendly-inline-widget  {
             height: 1000px !important;

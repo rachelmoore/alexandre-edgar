@@ -32,7 +32,7 @@ import Loading from "./loading";
 
 const Root = ({ state }) => {
     const data = state.source.get(state.router.link);
-    const isWritings = state.router.link.startsWith("/writings");
+    const isBlog = state.router.link.startsWith("/blog");
 
     const theme = extendTheme({
       colors: {
@@ -88,6 +88,9 @@ const Root = ({ state }) => {
             line-height: 1.55em;
             font-size: 17px;
           }
+          .page-text p {
+            margin-top: 1em;
+          }
           .calendly-inline-widget  {
             height: 1000px !important;
           }
@@ -110,12 +113,12 @@ const Root = ({ state }) => {
             </Flex>
           </>
         }
-        {/* <Switch>
+        <Switch>
           <Loading when={data.isFetching} />
           <List when={data.isArchive} />
           <Post when={data.isPost} />
           <Page when={data.isPage} />
-        </Switch> */}
+        </Switch>
 
         {/* <HeroFooter />
         <Box width="100%" height="2px" bg="brand.700" /> */}

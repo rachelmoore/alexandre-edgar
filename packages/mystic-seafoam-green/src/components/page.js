@@ -6,6 +6,7 @@ import {
   Text,
   Flex
 } from '@chakra-ui/react';
+import Contact from "./contact"
 import Loading from "./loading";
 
 const Post = ({ state, libraries }) => {
@@ -20,6 +21,7 @@ const Post = ({ state, libraries }) => {
 
   if (!data.isFetching) {
     return (
+      <>
       <Flex 
         direction="column"
         width="100%" 
@@ -41,10 +43,14 @@ const Post = ({ state, libraries }) => {
           <strong>Author: </strong>
           {author.name}
         </p> */}
-        <Text fontWeight={500} mb={8} fontSize="xl" color="blackAlpha.800">
+        <Text fontWeight={500} mb={8} fontSize="xl" color="blackAlpha.800" className="page-text">
           <Html2React html={post.content.rendered} />
         </Text>
       </Flex>
+      <Flex direction="column" align="center" bg="brand.100">
+        <Contact />
+      </Flex>
+      </>
     )
   }
 }

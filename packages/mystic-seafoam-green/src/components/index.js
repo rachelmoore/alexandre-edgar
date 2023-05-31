@@ -91,6 +91,9 @@ const Root = ({ state }) => {
           .page-text p {
             margin-top: 1em;
           }
+          .blogPost p img {
+            margin-bottom: 1em;
+          }
           .calendly-inline-widget  {
             height: 1000px !important;
           }

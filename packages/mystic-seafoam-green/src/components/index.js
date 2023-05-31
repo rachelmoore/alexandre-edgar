@@ -32,7 +32,7 @@ import Loading from "./loading";
 
 const Root = ({ state }) => {
     const data = state.source.get(state.router.link);
-    const isWritings = state.router.link.startsWith("/writings");
+    const isBlog = state.router.link.startsWith("/blog");
 
     const theme = extendTheme({
       colors: {
@@ -110,12 +110,12 @@ const Root = ({ state }) => {
             </Flex>
           </>
         }
-        {/* <Switch>
+        <Switch>
           <Loading when={data.isFetching} />
           <List when={data.isArchive} />
           <Post when={data.isPost} />
           <Page when={data.isPage} />
-        </Switch> */}
+        </Switch>
 
         {/* <HeroFooter />
         <Box width="100%" height="2px" bg="brand.700" /> */}

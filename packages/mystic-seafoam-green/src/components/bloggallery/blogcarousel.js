@@ -1,11 +1,10 @@
 import { Box, Flex, IconButton, useColorModeValue } from '@chakra-ui/react'
 import { useKeenSlider } from 'keen-slider/react' // using version 6.6.10
 import { forwardRef } from 'react'
-import { images } from './data'
 import "keen-slider/keen-slider.min.css"
 
 export const Carousel = forwardRef(function Carousel(props, ref) {
-  console.log("carousel props", props)
+  console.log("blog carousel props", props)
   return (
     <Flex
       overflow="hidden"
@@ -16,7 +15,7 @@ export const Carousel = forwardRef(function Carousel(props, ref) {
   )
 })
 export const CarouselSlide = (props) => {
-  console.log("carousel slide props", props)
+  console.log("blog carousel slide props", props)
   return (
   <Box
     className="chakra-carousel__slide"

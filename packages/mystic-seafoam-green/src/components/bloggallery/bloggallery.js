@@ -1,11 +1,11 @@
 import { Box } from '@chakra-ui/react'
-import { images } from './data'
-import { Gallery } from './gallery'
+import { Gallery } from './bloggallerygallery'
 
-function PhotoGallery() {
-  console.log("images PhotoGallery", images);
+function BlogGallery({images}) {
+  console.log("images BlogGallery", images);
   return (
     <Box
+    bg="pink"
       maxW="3xl"
       // height="90vh"
       mx="auto"
@@ -25,4 +25,4 @@ function PhotoGallery() {
   )
 }
 
-export default PhotoGallery;
+export default BlogGallery;

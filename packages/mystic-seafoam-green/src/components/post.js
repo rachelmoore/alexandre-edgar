@@ -8,6 +8,8 @@ import {
   HStack
 } from '@chakra-ui/react';
 import Loading from "./loading";
+import BlogGallery from "./bloggallery/bloggallery";
+import PostGallery from "./postgallery";
 
 const Post = ({ state, libraries }) => {
   const data = state.source.get(state.router.link)
@@ -15,7 +17,22 @@ const Post = ({ state, libraries }) => {
   const author = state.source.author[post.author]
   const Html2React = libraries.html2react.Component
 
-  const formattedDate = dayjs(post.date).format("MMMM DD, YYYY")
+  const formattedDate = dayjs(post.date).format("MMMM DD, YYYY");
+  const rendered = post.content.rendered;
+
+  function getAttrFromString(str, node, attr) {
+    var regex = new RegExp('<' + node + ' .*?' + attr + '="(.*?)"', "gi"), result, res = [];
+    let currentId = 0;
+    while ((result = regex.exec(str))) {
+        res.push({id: `${currentId}`, src: result[1], aspectRatio: 4 / 3, objectFit: "contain !important", alt: post.title.rendered});
+        currentId += 1;
+        console.log("currentId", currentId);
+    }
+    return res;
+}
+
+const imageArr = getAttrFromString(rendered, 'img', 'src');
+console.log(imageArr);
 
   if (data.isFetching) {
     return <Loading />
@@ -23,7 +40,8 @@ const Post = ({ state, libraries }) => {
 
   if (!data.isFetching) {
     return (
-      <Flex 
+      <>
+      {/* <Flex 
         direction="column"
         width="100%" 
         height="100%"
@@ -57,8 +75,11 @@ const Post = ({ state, libraries }) => {
           <Text fontWeight={500} mb={8} fontSize="lg" color="blackAlpha.800">
             <Html2React html={post.content.rendered} />
           </Text>
+
         </Flex>
-      </Flex>
+      </Flex> */}
+           <PostGallery imageArr={imageArr} />
+      </>
     )
   }
 }

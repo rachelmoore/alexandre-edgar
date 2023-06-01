@@ -39,13 +39,13 @@ export const images = [
       aspectRatio: 4 / 3, 
       objectFit: "contain !important",
     },
-    {
-      id: '05',
-      src: kitten,
-      alt: 'Kitten',
-      aspectRatio: 4 / 3, 
-      objectFit: "contain !important",
-    },
+    // {
+    //   id: '05',
+    //   src: kitten,
+    //   alt: 'Kitten',
+    //   aspectRatio: 4 / 3, 
+    //   objectFit: "contain !important",
+    // },
     {
       id: '06',
       src: oceanrocks,
@@ -60,13 +60,13 @@ export const images = [
       aspectRatio: 4 / 3, 
       objectFit: "contain !important",
     },
-    {
-      id: '08',
-      src: ruby,
-      alt: 'Cat with grass',
-      aspectRatio: 4 / 3, 
-      objectFit: "cover",
-    },
+    // {
+    //   id: '08',
+    //   src: ruby,
+    //   alt: 'Cat with grass',
+    //   aspectRatio: 4 / 3, 
+    //   objectFit: "cover",
+    // },
     {
       id: '09',
       src: teacup,
@@ -74,19 +74,19 @@ export const images = [
       aspectRatio: 4 / 3, 
       objectFit: "contain !important",
     },
-    {
-      id: '10',
-      src: vichytree,
-      alt: 'Vichy Springs tree',
-      aspectRatio: 4 / 3, 
-      objectFit: "contain !important",
-    },
-    {
-      id: '11',
-      src: vineyard,
-      alt: 'Ukiah vineyard',
-      aspectRatio: 4 / 3, 
-      objectFit: "cover",
-    },
+    // {
+    //   id: '10',
+    //   src: vichytree,
+    //   alt: 'Vichy Springs tree',
+    //   aspectRatio: 4 / 3, 
+    //   objectFit: "contain !important",
+    // },
+    // {
+    //   id: '11',
+    //   src: vineyard,
+    //   alt: 'Ukiah vineyard',
+    //   aspectRatio: 4 / 3, 
+    //   objectFit: "cover",
+    // },
   ]
   

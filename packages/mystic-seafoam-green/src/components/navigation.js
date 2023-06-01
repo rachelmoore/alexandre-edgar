@@ -32,7 +32,14 @@ function Navigation() {
                 </Link>
             </Flex>
             <Flex direction="row">
-            <Button ref={btnRef} ml={3} mr={3} bg="blackAlpha.800" onClick={onOpen}>
+                <Flex direction="row" color="brand.700">
+                    <Link link="/"><Text fontSize="xl" pl={3}>Home</Text></Link>
+                    <Link link="/about-alexandre"><Text fontSize="xl" pl={3}>About</Text></Link>
+                    <Link link="/blog"><Text fontSize="xl" pl={3}>Blog</Text></Link>
+                </Flex>
+
+
+            {/* <Button ref={btnRef} ml={3} mr={3} bg="blackAlpha.800" onClick={onOpen}>
               <Icon as={FiMenu} color="white" boxSize={7} />
             </Button>
             <Drawer
@@ -53,13 +60,8 @@ function Navigation() {
                   <DrawerBody style={{overflowY: "scroll"}}>
                       <Flex direction="column">
                           <Link link="/"><Text fontSize="xl" mb={2}>Home</Text></Link>
-                          {/* <Link link="/about"><Text fontSize="xl" mb={2}>My Process</Text></Link> */}
                           <Link link="/about-alexandre"><Text fontSize="xl" mb={2}>About Alexandre</Text></Link>
                           <Link link="/blog"><Text fontSize="xl" mb={2}>Blog</Text></Link>
-                          {/* <Link link="/category/horses"><Text fontSize="xl" mb={2}>Testimonials</Text></Link>
-                          <Link link="/category/horses"><Text fontSize="xl" mb={2}>Services</Text></Link>
-                          <Link link="/category/horses"><Text fontSize="xl" mb={2}>Packages</Text></Link>
-                          <Link link="/category/coding"><Text fontSize="xl" mb={5}>Contact</Text></Link> */}
                       </Flex>
                   </DrawerBody>
 
@@ -70,7 +72,7 @@ function Navigation() {
                       </Flex>
                   </DrawerFooter>
               </DrawerContent>
-            </Drawer>
+            </Drawer> */}
             </Flex>
       </Flex>
     )

@@ -1,4 +1,4 @@
-import { Image, Flex, Heading } from "@chakra-ui/react";
+import { Spinner, Flex } from "@chakra-ui/react";
 import React from "react"
 
 const Loading = () => {
@@ -13,7 +13,13 @@ const Loading = () => {
         justifyContent="center"
         alignItems="center"
       >
-        <Heading size="xl">Loading...</Heading>
+        <Spinner
+          thickness='4px'
+          speed='0.65s'
+          emptyColor='gray.200'
+          color='blue.500'
+          size='xl'
+        />
     </Flex>
     )
 }

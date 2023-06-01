@@ -12,6 +12,17 @@ const List = ({ state, libraries }) => {
   const data = state.source.get(state.router.link)
   const Html2React = libraries.html2react.Component;
 
+  function getAttrFromString(str, node, attr) {
+    var regex = new RegExp('<' + node + ' .*?' + attr + '="(.*?)"', "gi"), result, res = [];
+    let currentId = 0;
+    while ((result = regex.exec(str))) {
+        res.push({id: `${currentId}`, src: result[1], aspectRatio: 4 / 3, objectFit: "contain !important", alt: "Alexandre Edgar Photography"});
+        currentId += 1;
+        console.log("currentId", currentId);
+    }
+    return res;
+}
+
   if (data.isFetching) {
     return <Loading />
   }
@@ -28,7 +39,10 @@ const List = ({ state, libraries }) => {
     >
         {data.items.map((item) => {
           const post = state.source[item.type][item.id]
+          const imageArr = getAttrFromString(post.content.rendered, 'img', 'src');
+          console.log("imageArr in list", imageArr);
           return (
+            <>
             <Flex direction="column" key={item.id} >
               <Link link={post.link}>
                 <Heading size="lg" mt={5} mb={5} color="brand.100">
@@ -36,17 +50,21 @@ const List = ({ state, libraries }) => {
                 </Heading>
               </Link>
               <Flex direction="column">
-                {state.source.attachment[post.featured_media] &&
+                {/* {state.source.attachment[post.featured_media] &&
                   <Image src={state.source.attachment[post.featured_media].source_url} />
                 }
                 <Text fontWeight={500} mb={8} fontSize="lg" color="blackAlpha.800">
                   <Html2React html={post.excerpt.rendered} />
+                </Text> */}
+                <Text fontWeight={500} mb={8} fontSize="lg" color="blackAlpha.800" className="blogPost">
+                  <Html2React html={post.content.rendered} />
                 </Text>
                 <Link key={item.id} link={post.link}>
                   Read More
                 </Link>
             </Flex>
           </Flex>
+          </>
           )
         })}
         <Flex direction="row">

@@ -12,17 +12,6 @@ const List = ({ state, libraries }) => {
   const data = state.source.get(state.router.link)
   const Html2React = libraries.html2react.Component;
 
-  function getAttrFromString(str, node, attr) {
-    var regex = new RegExp('<' + node + ' .*?' + attr + '="(.*?)"', "gi"), result, res = [];
-    let currentId = 0;
-    while ((result = regex.exec(str))) {
-        res.push({id: `${currentId}`, src: result[1], aspectRatio: 4 / 3, objectFit: "contain !important", alt: "Alexandre Edgar Photography"});
-        currentId += 1;
-        console.log("currentId", currentId);
-    }
-    return res;
-}
-
   if (data.isFetching) {
     return <Loading />
   }
@@ -39,8 +28,6 @@ const List = ({ state, libraries }) => {
     >
         {data.items.map((item) => {
           const post = state.source[item.type][item.id]
-          const imageArr = getAttrFromString(post.content.rendered, 'img', 'src');
-          console.log("imageArr in list", imageArr);
           return (
             <>
             <Flex direction="column" key={item.id} >

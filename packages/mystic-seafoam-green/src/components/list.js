@@ -29,6 +29,7 @@ const List = ({ state, libraries }) => {
         {data.items.map((item) => {
           const post = state.source[item.type][item.id]
           return (
+            <>
             <Flex direction="column" key={item.id} >
               <Link link={post.link}>
                 <Heading size="lg" mt={5} mb={5} color="brand.100">
@@ -36,17 +37,21 @@ const List = ({ state, libraries }) => {
                 </Heading>
               </Link>
               <Flex direction="column">
-                {state.source.attachment[post.featured_media] &&
+                {/* {state.source.attachment[post.featured_media] &&
                   <Image src={state.source.attachment[post.featured_media].source_url} />
                 }
                 <Text fontWeight={500} mb={8} fontSize="lg" color="blackAlpha.800">
                   <Html2React html={post.excerpt.rendered} />
+                </Text> */}
+                <Text fontWeight={500} mb={8} fontSize="lg" color="blackAlpha.800" className="blogPost">
+                  <Html2React html={post.content.rendered} />
                 </Text>
                 <Link key={item.id} link={post.link}>
                   Read More
                 </Link>
             </Flex>
           </Flex>
+          </>
           )
         })}
         <Flex direction="row">

@@ -10,7 +10,7 @@ import {
     Stack,
     useColorModeValue,
   } from '@chakra-ui/react'
-  import { useState } from 'react'
+  import React, { useState } from 'react'
   import { IoChevronBackOutline, IoChevronForwardOutline } from 'react-icons/io5'
   import { useKeenSlider } from 'keen-slider/react' // using version 6.6.10
   import { images } from './data'
@@ -26,135 +26,192 @@ import {
   import vichytree from "../../assets/carousel/vichytree.jpg"
   import vineyard from "../../assets/carousel/vineyard.jpg"
   import "keen-slider/keen-slider.min.css"
+  import "./styles.css"
 
-  const AdaptiveHeight = (slider) => {
-    function updateHeight() {
-      slider.container.style.height =
-        slider.slides[slider.track.details.rel].offsetHeight + "px"
-    }
-    slider.on("created", updateHeight)
-    slider.on("slideChanged", updateHeight)
+const AdaptiveHeight = (slider) => {
+  function updateHeight() {
+    slider.container.style.height =
+      slider.slides[slider.track.details.rel].offsetHeight + "px"
   }
+  slider.on("created", updateHeight)
+  slider.on("slideChanged", updateHeight)
+}
 
-  function Carousel() {
-    const [currentSlide, setCurrentSlide] = useState(0)
-    // const [ref, slider] = useKeenSlider({
-    //     selector: '.chakra-carousel__slide',
-    //     slideChanged: (slider) => setCurrentSlide(slider.track.details.rel),
-    //   })
-    const [ref, slider] = useKeenSlider(
-        {
-          selector: '.chakra-carousel__slide',
-          initial: 0,
-          slideChanged: (slider) => setCurrentSlide(slider.track.details.rel),
+export default function Carousel() {
+  const [currentSlide, setCurrentSlide] = React.useState(0)
+  const [loaded, setLoaded] = useState(false)
+  const [sliderRef, instanceRef] = useKeenSlider(
+    {
+      initial: 0,
+      slideChanged(s) {
+        setCurrentSlide(s.track.details.rel)
+      },
+      created() {
+        setLoaded(true)
+      },
+    },
+    [AdaptiveHeight]
+  )
+
+  return (
+    // <>
+    //   <div className="navigation-wrapper">
+    <Stack spacing="4">
+    <Box
+      position="relative"
+      sx={{
+        _hover: {
+          '> button': {
+            display: 'inline-flex',
+          },
         },
-        // [AdaptiveHeight]
-      )
-
-    const hasPrevious = currentSlide !== 0
-    const hasNext = currentSlide < images.length - 1
-    return (
-      <Stack spacing="4">
-        <Box
-          position="relative"
-          sx={{
-            _hover: {
-              '> button': {
-                display: 'inline-flex',
-              },
-            },
-          }}
-        >
-
-          <Flex
-            ref={ref}
-            overflow="hidden"
-            position="relative"
-            userSelect="none"
-        >
-                {/* <Image src={beaune} fallback={<Skeleton />} />
-                <Image src={bwtree} fallback={<Skeleton />} />
-                <Image src={crow} fallback={<Skeleton />} /> */}
-
-            {images.map((image, i) => (
-              <CarouselSlide key={i}>
-                <AspectRatio
-                  ratio={image.aspectRatio}
-                  transition="all 200ms"
-                  opacity={currentSlide === i ? 1 : 0.4}
-                  _hover={{
-                    opacity: 1,
-                  }}
-                >
-                  <Image src={image.src} objectFit={image.objectFit} alt={image.alt} fallback={<Skeleton />} />
-                </AspectRatio>
-              </CarouselSlide>
-            ))}
-        </Flex>
-          {hasPrevious && (
+      }}
+    >
+        <div ref={sliderRef} className="keen-slider">
+          <div 
+            className="keen-slider__slide number-slide1"
+            style={{ height: 300 }}
+          >
+            1
+          </div>
+          <div
+            className="keen-slider__slide number-slide2"
+            style={{ height: 100 }}
+          >
+            2
+          </div>
+          <div
+            className="keen-slider__slide number-slide3"
+            style={{ height: 150 }}
+          >
+            3
+          </div>
+          <div className="keen-slider__slide number-slide4">4</div>
+          <div
+            className="keen-slider__slide number-slide5"
+            style={{ height: 75 }}
+          >
+            5
+          </div>
+          <div
+            className="keen-slider__slide number-slide6"
+            style={{ height: 100 }}
+          >
+            6
+          </div>
+        </div>
+        {loaded && instanceRef.current && (
+          <>
+            {/* <Arrow
+              left
+              onClick={(e) =>
+                e.stopPropagation() || instanceRef.current?.prev()
+              }
+              disabled={currentSlide === 0}
+            /> */}
             <CarouselIconButton
               pos="absolute"
               left="3"
               top="50%"
               transform="translateY(-50%)"
-              onClick={() => slider.current?.prev()}
+              onClick={() => instanceRef.current?.prev()}
               icon={<IoChevronBackOutline />}
               aria-label="Previous Slide"
             />
-          )}
 
-          {hasNext && (
             <CarouselIconButton
               pos="absolute"
               right="3"
               top="50%"
               transform="translateY(-50%)"
-              onClick={() => slider.current?.next()}
+              onClick={() => instanceRef.current?.next()}
               icon={<IoChevronForwardOutline />}
               aria-label="Next Slide"
             />
-          )}
-          <HStack position="absolute" width="full" justify="center" bottom="0" py="4">
-            {images.map((_, index) => (
-              <Circle key={index} size="2" bg={currentSlide === index ? 'white' : 'whiteAlpha.400'} />
-            ))}
-          </HStack>
-         </Box>
-       </Stack>
-    )
-  }
-  const CarouselIconButton = (props) => (
-    <IconButton
-      display="none"
-      fontSize="lg"
-      isRound
-      boxShadow="base"
-      bg={useColorModeValue('white', 'gray.800')}
-      _hover={{
-        bg: useColorModeValue('gray.100', 'gray.700'),
-      }}
-      _active={{
-        bg: useColorModeValue('gray.200', 'gray.600'),
-      }}
-      _focus={{
-        boxShadow: 'inerhit',
-      }}
-      _focusVisible={{
-        boxShadow: 'outline',
-      }}
-      {...props}
-    />
-  )
 
-export const CarouselSlide = (props) => (
-  <Box
-    className="chakra-carousel__slide"
-    position="relative"
-    overflow="hidden"
-    width="100%"
-    minH="100%"
+            {/* <Arrow
+              onClick={(e) =>
+                e.stopPropagation() || instanceRef.current?.next()
+              }
+              disabled={
+                currentSlide ===
+                instanceRef.current.track.details.slides.length - 1
+              }
+            /> */}
+          </>
+        )}
+      {/* </div> */}
+      {loaded && instanceRef.current && (
+        <HStack position="absolute" width="full" justify="center" bottom="0" py="4">
+          {images.map((_, index) => (
+            <Circle key={index} size="2" bg={currentSlide === index ? 'white' : 'whiteAlpha.400'} />
+          ))}
+        </HStack>
+        // <div className="dots">
+        //   {[
+        //     ...Array(instanceRef.current.track.details.slides.length).keys(),
+        //   ].map((idx) => {
+        //     return (
+        //       <button
+        //         key={idx}
+        //         onClick={() => {
+        //           instanceRef.current?.moveToIdx(idx)
+        //         }}
+        //         className={"dot" + (currentSlide === idx ? " active" : "")}
+        //       ></button>
+        //     )
+        //   })}
+        // </div>
+      )}
+      </Box>
+      </Stack>
+  )
+}
+
+function Arrow(props) {
+  const disabeld = props.disabled ? " arrow--disabled" : ""
+  return (
+    <svg
+      onClick={props.onClick}
+      className={`arrow ${
+        props.left ? "arrow--left" : "arrow--right"
+      } ${disabeld}`}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+    >
+      {props.left && (
+        <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
+      )}
+      {!props.left && (
+        <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+      )}
+    </svg>
+  )
+}
+
+export const CarouselIconButton = (props) => (
+  <IconButton
+    variant="unstyled"
+    boxSize="auto"
+    minW="auto"
+    display="inline-flex"
+    fontSize="2xl"
+    color={useColorModeValue('gray.600', 'gray.400')}
+    _hover={{
+      color: useColorModeValue('blue.500', 'blue.300'),
+      _disabled: {
+        color: useColorModeValue('gray.600', 'gray.400'),
+      },
+    }}
+    _active={{
+      color: useColorModeValue('blue.600', 'blue.400'),
+    }}
+    _focus={{
+      boxShadow: 'none',
+    }}
+    _focusVisible={{
+      boxShadow: 'outline',
+    }}
     {...props}
   />
 )
-
-export default Carousel;

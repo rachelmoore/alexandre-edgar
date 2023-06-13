@@ -37,7 +37,8 @@ const Root = ({ state }) => {
     const theme = extendTheme({
       colors: {
         brand: {
-          100: "RGBA(0, 0, 0, 0.80)",
+          // 100: "RGBA(0, 0, 0, 0.80)",
+          100: "#234762",
           200: "RGBA(255, 255, 255, 0.06)",
           300: "#657C83",
           400: "#CEDDF4",
@@ -47,6 +48,10 @@ const Root = ({ state }) => {
           800: "#F8E8D4"
         },
       },
+      fonts: {
+        heading: "Montserrat",
+        body: "Montserrat"
+      }
     });
   
     return (
@@ -66,7 +71,7 @@ const Root = ({ state }) => {
             box-sizing: border-box;
           }
           html {
-            font-family: "system-ui, Verdana, Arial, sans-serif";
+            font-family: "Montserrat";
           }
           li {
             line-height: 1.85em;

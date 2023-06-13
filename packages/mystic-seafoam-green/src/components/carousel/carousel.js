@@ -70,9 +70,9 @@ export default function Carousel() {
         <div ref={sliderRef} className="keen-slider">
           <div 
             className="keen-slider__slide number-slide1"
-            style={{ height: 300 }}
+            style={{ height: "auto", overflow: "auto" }}
           >
-            1
+            <Image src={beaune} fallback={<Skeleton />} />
           </div>
           <div
             className="keen-slider__slide number-slide2"

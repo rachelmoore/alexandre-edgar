@@ -15,8 +15,6 @@ const mysticSeafoamGreen = {
           WebFontLoader.load({
             google: {
               families: [
-                "Rye:400",
-                "Inconsolata:400",
                 "Montserrat:400",
               ],
             },

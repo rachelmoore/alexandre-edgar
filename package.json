@@ -32,6 +32,7 @@
     "mystic-seafoam-green": "file:packages/mystic-seafoam-green",
     "react-calendly": "^4.1.0",
     "react-hook-form": "^7.37.0",
-    "react-icons": "^4.6.0"
+    "react-icons": "^4.6.0",
+    "webfontloader": "^1.6.28"
   }
 }

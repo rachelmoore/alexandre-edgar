@@ -9,7 +9,21 @@ const mysticSeafoamGreen = {
     theme: {},
   },
   actions: {
-    theme: {},
+    theme: {
+      beforeCSR: () => {
+        import("webfontloader").then((WebFontLoader) => {
+          WebFontLoader.load({
+            google: {
+              families: [
+                "Rye:400",
+                "Inconsolata:400",
+                "Montserrat:400",
+              ],
+            },
+          });
+        });
+      },
+    },
   },
 }
 

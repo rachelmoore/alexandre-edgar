@@ -48,6 +48,10 @@ const Root = ({ state }) => {
           800: "#F8E8D4"
         },
       },
+      fonts: {
+        heading: "Montserrat",
+        body: "Montserrat"
+      }
     });
   
     return (
@@ -67,7 +71,7 @@ const Root = ({ state }) => {
             box-sizing: border-box;
           }
           html {
-            font-family: "system-ui, Verdana, Arial, sans-serif";
+            font-family: "Montserrat";
           }
           li {
             line-height: 1.85em;

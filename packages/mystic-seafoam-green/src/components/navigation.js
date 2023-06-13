@@ -28,7 +28,7 @@ function Navigation() {
         <Flex direction="row" bg="brand.100" padding={5} justify="space-between">
             <Flex>
                 <Link link="/">
-                    <Heading size="lg" color="brand.700">Alexandre Edgar</Heading>
+                    <Heading size="lg" color="brand.700" fontFamily="Montserrat">Alexandre Edgar</Heading>
                 </Link>
             </Flex>
             <Flex direction="row">

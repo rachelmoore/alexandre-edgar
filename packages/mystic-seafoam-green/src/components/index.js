@@ -37,7 +37,8 @@ const Root = ({ state }) => {
     const theme = extendTheme({
       colors: {
         brand: {
-          100: "RGBA(0, 0, 0, 0.80)",
+          // 100: "RGBA(0, 0, 0, 0.80)",
+          100: "#234762",
           200: "RGBA(255, 255, 255, 0.06)",
           300: "#657C83",
           400: "#CEDDF4",

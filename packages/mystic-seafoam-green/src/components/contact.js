@@ -42,6 +42,7 @@ function Contact() {
     return (
       <Flex id="introduction" direction="column" justify="center" minWidth="50%" ml="15%" mr="15%" mb={10} mt={10}>
         <Heading size="lg" color="brand.700" fontWeight="500" mt={5} mb={5} width="100%" textAlign="center">Contact Alexandre</Heading>
+        <Heading size="sm" color="brand.700" fontWeight="500" mb={5} width="100%" textAlign="center">669-437-0406</Heading>
         <Box
             bg="bg-surface"
             boxShadow="sm"

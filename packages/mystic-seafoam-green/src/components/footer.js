@@ -5,7 +5,7 @@ import {
   Icon
 } from '@chakra-ui/react';
 import { FiMail, FiPhone } from "react-icons/fi";
-import { FaInstagram, FaPhone } from 'react-icons/fa';
+import { FaInstagram } from 'react-icons/fa';
 import Link from "@frontity/components/link";
 
 function Footer() {

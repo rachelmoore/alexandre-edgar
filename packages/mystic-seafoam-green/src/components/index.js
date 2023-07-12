@@ -3,17 +3,14 @@ import {
   connect, 
   Global, 
   css, 
-  Head, 
-  styled, 
+  Head
 } from "frontity";
 import {
   extendTheme,
   Flex,
-  Heading,
   Box
 } from '@chakra-ui/react'
 import { ChakraProvider } from '@chakra-ui/react'
-import Link from "@frontity/components/link"
 import Switch from "@frontity/components/switch"
 import List from "./list"
 import Post from "./post"
@@ -23,11 +20,7 @@ import Footer from "./footer"
 import Contact from "./contact"
 import Carousel from "./carousel/carousel";
 import PhotoGallery from "./photogallery/photogallery";
-import Hero from "./hero"
-import About from "./about"
-import Bio from "./bio"
 import Sessions from "./sessions"
-import HeroFooter from "./herofooter"
 import Loading from "./loading";
 
 const Root = ({ state }) => {
@@ -106,21 +99,23 @@ const Root = ({ state }) => {
         />
 
         <Navigation />
-        <Box width="100%" height="5px" />
+        <Box width="100%" height="5px" bg="#FFFFFF" />
+
         {state.router.link === "/" &&
           <>
-  
             {/* <Carousel /> */}
             <PhotoGallery />
 
-            {/* <Flex direction="row" align="center" bg="brand.700">
-              <Sessions />
-            </Flex> */}
             <Flex direction="column" align="center" bg="brand.100">
               <Contact />
             </Flex>
+
+            <Flex direction="row" align="center" bg="#FFFFFF">
+              <Sessions />
+            </Flex>
           </>
         }
+        
         <Switch>
           <Loading when={data.isFetching} />
           <List when={data.isArchive} />
@@ -128,8 +123,6 @@ const Root = ({ state }) => {
           <Page when={data.isPage} />
         </Switch>
 
-        {/* <HeroFooter />
-        <Box width="100%" height="2px" bg="brand.700" /> */}
         <Footer />
       </ChakraProvider>
     )

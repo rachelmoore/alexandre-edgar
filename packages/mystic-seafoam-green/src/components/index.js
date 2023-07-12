@@ -106,7 +106,7 @@ const Root = ({ state }) => {
         />
 
         <Navigation />
-        <Box width="100%" height="5px" />
+        <Box width="100%" height="5px" bg="#FFFFFF" />
         {state.router.link === "/" &&
           <>
   
@@ -116,7 +116,7 @@ const Root = ({ state }) => {
             <Flex direction="column" align="center" bg="brand.100">
               <Contact />
             </Flex>
-            <Flex direction="row" align="center" bg="brand.700">
+            <Flex direction="row" align="center" bg="#FFFFFF">
               <Sessions />
             </Flex>
           </>

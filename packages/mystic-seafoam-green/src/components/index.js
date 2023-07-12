@@ -113,11 +113,11 @@ const Root = ({ state }) => {
             {/* <Carousel /> */}
             <PhotoGallery />
 
-            {/* <Flex direction="row" align="center" bg="brand.700">
-              <Sessions />
-            </Flex> */}
             <Flex direction="column" align="center" bg="brand.100">
               <Contact />
+            </Flex>
+            <Flex direction="row" align="center" bg="brand.700">
+              <Sessions />
             </Flex>
           </>
         }

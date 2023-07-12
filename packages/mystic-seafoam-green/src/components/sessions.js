@@ -1,7 +1,6 @@
 import React from "react";
 import { styled } from "frontity";
 import {
-  Button,
   Heading,
   Text,
   Flex
@@ -18,7 +17,12 @@ function Sessions() {
             width="100%" 
             height="100%"
         >
-            <Flex direction="column" width={{base: "100%", lg: "50%"}} padding={{base: 5, lg: 20}} borderRight={{base: "0px solid #000000", md: "2px solid #000000"}}>
+            <Flex 
+                direction="column" 
+                width={{base: "100%", lg: "50%"}} 
+                padding={{base: 5, lg: 20}} 
+                borderRight={{base: "0px solid #000000", md: "2px solid #000000"}}
+            >
                 <Heading size="2xl" mt={10} mb={10} color="blackAlpha.800">Book a Photoshoot</Heading>
                 <Text fontWeight={500} mb={5} fontSize="lg" color="blackAlpha.800">
                     Portrait sessions are available for individuals, couples, and families. The shoot lasts for up to two hours and costs $180.

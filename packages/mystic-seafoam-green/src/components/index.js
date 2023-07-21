@@ -107,7 +107,7 @@ const Root = ({ state }) => {
         {/* <Box width="100%" height="5px" bg="#FFFFFF" /> */}
 
         {state.router.link === "/" &&
-          <Box minHeight="85vh" mt={1} mb={1}>
+          <Box minHeight="85vh" pt={1} pb={1} bg="black">
             <SimpleGrid columns={{base: 1, sm: 2}} spacing={1}>
               <Box 
                 height='85vh'   

@@ -25,7 +25,7 @@ function Navigation() {
     const btnRef = React.useRef();
   
     return (
-        <Flex direction="row" bg="brand.100" padding={5} justify="space-between">
+        <Flex direction="row" bg="blackAlpha.800" padding={5} justify="space-between">
 
             <Flex>
                 <Link link="/">

@@ -8,7 +8,9 @@ import {
 import {
   extendTheme,
   Flex,
-  Box
+  Button,
+  Box,
+  SimpleGrid
 } from '@chakra-ui/react'
 import { ChakraProvider } from '@chakra-ui/react'
 import Switch from "@frontity/components/switch"
@@ -99,21 +101,32 @@ const Root = ({ state }) => {
         />
 
         <Navigation />
-        <Box width="100%" height="5px" bg="#FFFFFF" />
+        {/* <Box width="100%" height="5px" bg="#FFFFFF" /> */}
 
         {state.router.link === "/" &&
-          <>
-            {/* <Carousel /> */}
-            <PhotoGallery />
-
-            <Flex direction="column" align="center" bg="brand.100">
-              <Contact />
-            </Flex>
-
-            <Flex direction="row" align="center" bg="#FFFFFF">
-              <Sessions />
-            </Flex>
-          </>
+          <Box minHeight="85vh" mt={1} mb={1}>
+            <SimpleGrid columns={{base: 1, sm: 2}} spacing={1}>
+              <Box 
+                height='85vh'   
+                backgroundImage={}
+                backgroundPosition="center"
+                backgroundRepeat="no-repeat"
+              >
+                <Flex height="100%" direction="column" justifyContent="center" alignItems="center">
+                  <Button>
+                    Book a Photoshoot
+                  </Button>
+                </Flex>
+              </Box>
+              <Box bg='tomato' height='85vh'>
+                <Flex height="100%" direction="column" justifyContent="center" alignItems="center">
+                  <Button>
+                    View Gallery
+                  </Button>
+                </Flex>
+              </Box>
+            </SimpleGrid>
+          </Box>
         }
         
         <Switch>

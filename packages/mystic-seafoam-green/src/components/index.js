@@ -10,7 +10,8 @@ import {
   Flex,
   Button,
   Box,
-  SimpleGrid
+  SimpleGrid,
+  Text
 } from '@chakra-ui/react'
 import { ChakraProvider } from '@chakra-ui/react'
 import Switch from "@frontity/components/switch"
@@ -24,6 +25,8 @@ import Carousel from "./carousel/carousel";
 import PhotoGallery from "./photogallery/photogallery";
 import Sessions from "./sessions"
 import Loading from "./loading";
+import rachelmain800 from "../assets/carousel/rachelmain800.jpg";
+import windowflowers800 from "../assets/carousel/windowflowers800.jpg";
 
 const Root = ({ state }) => {
     const data = state.source.get(state.router.link);
@@ -108,21 +111,33 @@ const Root = ({ state }) => {
             <SimpleGrid columns={{base: 1, sm: 2}} spacing={1}>
               <Box 
                 height='85vh'   
-                backgroundImage={}
+                backgroundImage={rachelmain800}
                 backgroundPosition="center"
                 backgroundRepeat="no-repeat"
               >
-                <Flex height="100%" direction="column" justifyContent="center" alignItems="center">
-                  <Button>
-                    Book a Photoshoot
-                  </Button>
+                <Flex height="100%" direction="column">
+                  <Flex height="50%" />
+                  <Flex direction="column" height="50%" justifyContent="flex-end" alignItems="center">
+                    <Button mb={20} variant="outline" size="lg" color="white" _hover={{background: "white", color: "black"}}>
+                        Book a Photoshoot
+                    </Button>
+                  </Flex>
                 </Flex>
               </Box>
-              <Box bg='tomato' height='85vh'>
-                <Flex height="100%" direction="column" justifyContent="center" alignItems="center">
-                  <Button>
-                    View Gallery
-                  </Button>
+
+              <Box 
+                height='85vh'   
+                backgroundImage={windowflowers800}
+                backgroundPosition="center"
+                backgroundRepeat="no-repeat"
+              >
+                <Flex height="100%" direction="column">
+                  <Flex height="50%" />
+                  <Flex direction="column" height="50%" justifyContent="flex-end" alignItems="center">
+                    <Button mb={20} variant="outline" size="lg" color="white" _hover={{background: "white", color: "black"}}>
+                        View Gallery
+                    </Button>
+                  </Flex>
                 </Flex>
               </Box>
             </SimpleGrid>

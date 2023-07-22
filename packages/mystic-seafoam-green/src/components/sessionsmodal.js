@@ -10,7 +10,8 @@ import {
     useDisclosure,
     Image,
     Button,
-    Flex
+    Flex,
+    Center
   } from '@chakra-ui/react'
 
 function SessionsModal({ image }) {
@@ -27,9 +28,11 @@ function SessionsModal({ image }) {
             <Modal isOpen={isOpen} onClose={onClose} size="full">
             <ModalOverlay />
             <ModalContent bg="blackAlpha.600">
-                <ModalCloseButton />
+                <ModalCloseButton color="white" />
                 <ModalBody>
-                    <Image src={image} />
+                    <Center>
+                        <Image src={image} />
+                    </Center>
                 </ModalBody>
             </ModalContent>
             </Modal>

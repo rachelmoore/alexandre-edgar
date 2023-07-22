@@ -5,10 +5,17 @@ import {
   Text,
   Flex,
   Grid,
-  GridItem
+  GridItem,
+  Image,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  Box,
+  Button
 } from '@chakra-ui/react';
 import { InlineWidget } from "react-calendly";
 import Contact from "./contact";
+import SessionsModal from "./sessionsmodal";
 import rachelmain600 from "../assets/carousel/rachelmain600.jpg";
 import rachelpool800 from "../assets/carousel/rachelpool800.jpg";
 import rachelbeach800 from "../assets/carousel/rachelbeach800.jpg";
@@ -66,9 +73,15 @@ function Sessions() {
             bg="black"
         >
 
-            <GridItem colSpan={3} rowSpan={2} backgroundImage={rachelmain600} backgroundPosition="center" backgroundRepeat="no-repeat"  />
+            <GridItem colSpan={3} rowSpan={2} backgroundImage={rachelmain600} backgroundPosition="center" backgroundRepeat="no-repeat">
+                {/* <Flex height="100%" width="100%" role="group" justifyContent="center" alignItems="center" _hover={{ background: "blackAlpha.600" }}>
+                    <Button mb={20} variant="outline" border="3px solid" size="lg" color="white" display="none" _groupHover={{ display: "flex" }} _hover={{background: "white", color: "black"}}>
+                        View Full Image
+                    </Button>
+                </Flex> */}
+                <SessionsModal image={rachelmain600} />
+            </GridItem>
             <GridItem colSpan={5} rowSpan={2} backgroundImage={racheljupiterskirt1000} backgroundPosition="center" backgroundRepeat="no-repeat"  />
-            {/* <GridItem colSpan={2} rowSpan={2} backgroundImage={rachelbluffs800} backgroundPosition="center" backgroundRepeat="no-repeat"  /> */}
             <GridItem colSpan={5} rowSpan={1} bg='brand.700'>
                 <Flex height="100%" p={8} direction="column" alignItems="center" justifyContent="center">
                     <Text fontWeight={500} mb={5} fontSize="lg" color="blackAlpha.800">

@@ -51,7 +51,7 @@ const Root = ({ state }) => {
         },
       },
       fonts: {
-        heading: "Lumanosimo",
+        heading: "Lora",
         body: "Montserrat"
       }
     });

@@ -22,6 +22,7 @@ const mysticSeafoamGreen = {
                 "Lumanosimo:400",
                 "Lato:400",
                 "Roboto:400",
+                "Lora:400"
 
               ],
             },

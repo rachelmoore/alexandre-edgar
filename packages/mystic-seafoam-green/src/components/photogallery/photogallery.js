@@ -1,6 +1,6 @@
-import { Box } from '@chakra-ui/react'
-import { images } from './data'
-import { Gallery } from './gallery'
+import { Box } from '@chakra-ui/react';
+import { images } from './data';
+import { Gallery } from './gallery';
 
 function PhotoGallery() {
   return (
@@ -20,6 +20,7 @@ function PhotoGallery() {
       }}
     >
       <Gallery images={images} />
+      <Box height="250px" />
     </Box>
   )
 }

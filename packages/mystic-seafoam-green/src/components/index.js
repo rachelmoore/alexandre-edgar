@@ -16,18 +16,23 @@ import {
 } from '@chakra-ui/react'
 import { ChakraProvider } from '@chakra-ui/react'
 import Switch from "@frontity/components/switch"
+import Link from "@frontity/components/link";
 import List from "./list"
 import Post from "./post"
 import Page from "./page"
-import Navigation from "./navigation"
-import Footer from "./footer"
+import Navigation from "./navigation";
+import Footer from "./footer";
 import Loading from "./loading";
+import Sessions from "./sessions";
+import PhotoGallery from "./photogallery/photogallery";
 import rachelmain800 from "../assets/carousel/rachelmain800.jpg";
 import windowflowers800 from "../assets/carousel/windowflowers800.jpg";
 
 const Root = ({ state }) => {
     const data = state.source.get(state.router.link);
     const isBlog = state.router.link.startsWith("/blog");
+    const isBooking = state.router.link.startsWith("/book");
+    const isGallery = state.router.link.startsWith("/gallery");
 
     const theme = extendTheme({
       colors: {
@@ -119,9 +124,11 @@ const Root = ({ state }) => {
                 alignItems="center"
                 justifyContent="flex-end"
               >
-                <Button mb={20} variant="outline" border="3px solid" size="lg" color="white" _hover={{background: "white", color: "black"}}>
-                    Book a Photoshoot
-                </Button>
+                <Link link="http://localhost:3000/book">
+                  <Button mb={20} variant="outline" border="3px solid" size="lg" color="white" _hover={{background: "white", color: "black"}}>
+                      Book a Photoshoot
+                  </Button>
+                </Link>
               </Flex>
 
               <Flex 
@@ -134,9 +141,11 @@ const Root = ({ state }) => {
                 alignItems="center"
                 justifyContent="flex-end"
               >
-                <Button mb={20} variant="outline" border="3px solid" size="lg" color="white" _hover={{background: "white", color: "black"}}>
-                    View Gallery
-                </Button>
+                <Link link="http://localhost:3000/gallery">
+                  <Button mb={20} variant="outline" border="3px solid" size="lg" color="white" _hover={{background: "white", color: "black"}}>
+                      View Gallery
+                  </Button>
+                </Link>
               </Flex>
               
             </Flex>
@@ -144,12 +153,18 @@ const Root = ({ state }) => {
           </Flex>
         }
         
-        <Switch>
-          <Loading when={data.isFetching} />
-          <List when={data.isArchive} />
-          <Post when={data.isPost} />
-          <Page when={data.isPage} />
-        </Switch>
+          <Switch>
+        <Flex minHeight="85vh">
+            <Loading when={data.isFetching} />
+            <Sessions when={isBooking} />
+        </Flex>
+            <PhotoGallery when={isGallery} />
+            <Flex minHeight="85vh">
+            <List when={data.isArchive} />
+            <Post when={data.isPost} />
+            <Page when={data.isPage} />
+            </Flex>
+          </Switch>
 
         <Footer />
       </ChakraProvider>

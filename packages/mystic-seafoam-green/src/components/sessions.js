@@ -21,7 +21,9 @@ import SessionsModal from "./sessionsmodal";
 import rachelmain600 from "../assets/carousel/rachelmain600.jpg";
 import rachelpool800 from "../assets/carousel/rachelpool800.jpg";
 import rachelbeach800 from "../assets/carousel/rachelbeach800.jpg";
+import rachelnoyo800 from "../assets/carousel/rachelnoyo800.jpg";
 import rachelbluffs800 from "../assets/carousel/rachelbluffs800.jpg";
+import racheljup800 from "../assets/carousel/racheljup800.jpg";
 import racheljupiterskirt800 from "../assets/carousel/racheljupiterskirt800.jpg";
 import racheljupiterskirt1000 from "../assets/carousel/racheljupiterskirt1000.jpg";
 import racheljupiterskirt1200 from "../assets/carousel/racheljupiterskirt1200.jpg";
@@ -85,8 +87,8 @@ function Sessions() {
                             <InlineWidget id="calendly-widget" url="https://calendly.com/alexandreedgar/portrait-session"/>
                         </CalendlyWrapper>
                     </GridItem>
-                    <GridItem colSpan={3} rowSpan={1} backgroundImage={rachelbeach800} backgroundPosition="center" backgroundRepeat="no-repeat">
-                        <SessionsModal image={rachelbeach800} />
+                    <GridItem colSpan={3} rowSpan={1} backgroundImage={rachelnoyo800} backgroundPosition="center" backgroundRepeat="no-repeat">
+                        <SessionsModal image={rachelnoyo800} />
                     </GridItem>
                     <GridItem colSpan={2} rowSpan={1} backgroundImage={rachelpool800} backgroundPosition="center" backgroundRepeat="no-repeat">
                         <SessionsModal image={rachelpool800} />
@@ -179,11 +181,11 @@ function Sessions() {
                             height="500px"
                             borderRight={{base: "0px solid #000000", sm: "4px solid #000000"}}
                             borderTop="4px solid #000000"
-                            backgroundImage={rachelbeach800}
+                            backgroundImage={rachelnoyo800}
                             backgroundPosition="center" 
                             backgroundRepeat="no-repeat"
                         >
-                            <SessionsModal image={rachelbeach800} />
+                            <SessionsModal image={rachelnoyo800} />
                         </Flex>
                         <Flex 
                             direction="column" 

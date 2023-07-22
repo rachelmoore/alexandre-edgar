@@ -6,9 +6,11 @@ import {
   Flex
 } from '@chakra-ui/react';
 import { InlineWidget } from "react-calendly";
+import Contact from "./contact";
 
 function Sessions() {
     return (
+        <Flex direction="column">
         <Flex 
             direction={{
                 base: "column",
@@ -25,7 +27,7 @@ function Sessions() {
             >
                 <Heading size="2xl" mt={10} mb={10} color="blackAlpha.800">Book a Photoshoot</Heading>
                 <Text fontWeight={500} mb={5} fontSize="lg" color="blackAlpha.800">
-                    Portrait sessions are available for individuals, couples, and families. The shoot lasts for up to two hours and costs $180.
+                    Portrait sessions are available for individuals, couples, and families. The shoot lasts for one hour and costs $350.
                 </Text>
 
                 <Text fontWeight={500} mb={5} fontSize="lg" color="blackAlpha.800">
@@ -33,7 +35,7 @@ function Sessions() {
                 </Text>
 
                 <Text fontWeight={500} mb={5} fontSize="lg" color="blackAlpha.800">
-                Alexandre will email you upon booking to determine where to meet for the shoot. If you are undecided but have a vision for what you hope the photos to capture he can help to select a location.
+                    Alexandre will email you upon booking to determine where to meet for the shoot. If you are undecided but have a vision for what you hope the photos to capture he can help to select a location.
                 </Text>
             </Flex>
 
@@ -42,6 +44,10 @@ function Sessions() {
                     <InlineWidget id="calendly-widget" url="https://calendly.com/alexandreedgar/portrait-session"/>
                 </CalendlyWrapper>
             </Flex>
+        </Flex>
+        <Flex direction="column" align="center" bg="black">
+          <Contact />
+        </Flex>
         </Flex>
     )
   }

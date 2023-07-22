@@ -8,7 +8,6 @@ import {
   HStack
 } from '@chakra-ui/react';
 import Loading from "./loading";
-import BlogCarousel from "./blogcarousel/blogcarousel";
 
 const Post = ({ state, libraries }) => {
   const data = state.source.get(state.router.link)

@@ -16,6 +16,13 @@ const mysticSeafoamGreen = {
             google: {
               families: [
                 "Montserrat:400",
+                "Oswald:300",
+                "Oswald:400",
+                "Oswald:600",
+                "Lumanosimo:400",
+                "Lato:400",
+                "Roboto:400",
+
               ],
             },
           });
@@ -25,4 +32,4 @@ const mysticSeafoamGreen = {
   },
 }
 
-export default mysticSeafoamGreen
+export default mysticSeafoamGreen;

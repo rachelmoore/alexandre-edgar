@@ -21,10 +21,6 @@ import Post from "./post"
 import Page from "./page"
 import Navigation from "./navigation"
 import Footer from "./footer"
-import Contact from "./contact"
-import Carousel from "./carousel/carousel";
-import PhotoGallery from "./photogallery/photogallery";
-import Sessions from "./sessions"
 import Loading from "./loading";
 import rachelmain800 from "../assets/carousel/rachelmain800.jpg";
 import windowflowers800 from "../assets/carousel/windowflowers800.jpg";
@@ -105,7 +101,6 @@ const Root = ({ state }) => {
         />
 
         <Navigation />
-        {/* <Box width="100%" height="5px" bg="#FFFFFF" /> */}
 
         {state.router.link === "/" &&
           <Flex minHeight="85vh" pt={1} pb={1} bg="black" directon="column" alignItems="center" justifyContent="center">
@@ -124,14 +119,9 @@ const Root = ({ state }) => {
                 alignItems="center"
                 justifyContent="flex-end"
               >
-                {/* <Flex height="100%" direction="column">
-                  <Flex height="50%" /> */}
-                  {/* <Flex direction="column" height="50%" justifyContent="flex-end" alignItems="center"> */}
-                    <Button mb={20} variant="outline" border="3px solid" size="lg" color="white" _hover={{background: "white", color: "black"}}>
-                        Book a Photoshoot
-                    </Button>
-                  {/* </Flex> */}
-                {/* </Flex> */}
+                <Button mb={20} variant="outline" border="3px solid" size="lg" color="white" _hover={{background: "white", color: "black"}}>
+                    Book a Photoshoot
+                </Button>
               </Flex>
 
               <Flex 
@@ -144,14 +134,9 @@ const Root = ({ state }) => {
                 alignItems="center"
                 justifyContent="flex-end"
               >
-                {/* <Flex height="100%" direction="column">
-                  <Flex height="50%" />
-                  <Flex direction="column" height="50%" justifyContent="flex-end" alignItems="center"> */}
-                    <Button mb={20} variant="outline" border="3px solid" size="lg" color="white" _hover={{background: "white", color: "black"}}>
-                        View Gallery
-                    </Button>
-                  {/* </Flex>
-                </Flex> */}
+                <Button mb={20} variant="outline" border="3px solid" size="lg" color="white" _hover={{background: "white", color: "black"}}>
+                    View Gallery
+                </Button>
               </Flex>
               
             </Flex>

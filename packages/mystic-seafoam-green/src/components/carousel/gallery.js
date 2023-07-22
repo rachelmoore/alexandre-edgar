@@ -1,7 +1,7 @@
 import { AspectRatio, HStack, Image, Skeleton, Stack, useBreakpointValue } from '@chakra-ui/react'
 import { useState } from 'react'
 import { IoChevronBackOutline, IoChevronForwardOutline } from 'react-icons/io5'
-import { Carousel, CarouselIconButton, CarouselSlide, useCarousel } from './Carousel'
+import { Carousel, CarouselIconButton, CarouselSlide, useCarousel } from './carousel'
 
 function Gallery(props) {
   const { images, aspectRatio = 4 / 3, rootProps } = props
@@ -22,7 +22,7 @@ function Gallery(props) {
     slideChanged: (slider) => setCurrentSlide(slider.track.details.rel),
   })
   return (
-    <Stack spacing="4" {...rootProps} p={10} bg="brand.700">
+    <Stack spacing="4" {...rootProps} p={10} bg="brand.700" minHeight="85vh">
       <AspectRatio ratio={aspectRatio}>
         <Image
           src={images[index].src}

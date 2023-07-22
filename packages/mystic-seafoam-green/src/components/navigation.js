@@ -64,7 +64,7 @@ function Navigation() {
                             <Link link="/"><Text fontSize="xl" mb={2}>Home</Text></Link>
                             <Link link="/about-alexandre"><Text fontSize="xl" mb={2}>About Alexandre</Text></Link>
                             <Link link="https://alexandreedgar.com/book"><Text fontSize="xl" mb={2}>Book a Session</Text></Link>
-                            <Link link="/https://alexandreedgar.com/gallery"><Text fontSize="xl" mb={2}>Gallery</Text></Link>
+                            <Link link="https://alexandreedgar.com/gallery"><Text fontSize="xl" mb={2}>Gallery</Text></Link>
                             {/* <Link link="/blog"><Text fontSize="xl" mb={2}>Blog</Text></Link> */}
                         </Flex>
                     </DrawerBody>

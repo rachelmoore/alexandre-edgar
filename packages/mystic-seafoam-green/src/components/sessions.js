@@ -65,12 +65,14 @@ function Sessions() {
         //   <Contact />
         // </Flex>
         // </Flex>
+        <Flex minHeight="85vh" pt={1} pb={1} bg="black" directon="column" alignItems="center" justifyContent="center">
         <Grid
             minHeight='85vh'
             templateRows='repeat(4, 1fr)'
             templateColumns='repeat(8, 1fr)'
             gap={1}
             bg="black"
+            maxWidth="1500px"
         >
 
             <GridItem colSpan={3} rowSpan={2} backgroundImage={rachelmain600} backgroundPosition="center" backgroundRepeat="no-repeat">
@@ -106,6 +108,7 @@ function Sessions() {
                 <SessionsModal image={rachelpool800} />
             </GridItem>
         </Grid>
+        </Flex>
     )
   }
 

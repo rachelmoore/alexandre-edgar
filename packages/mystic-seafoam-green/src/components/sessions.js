@@ -111,7 +111,7 @@ function Sessions() {
             }
 
             {!fullSize &&
-                <Flex direction="column" minHeight="85vh" pt={1} pb={1} bg="black">
+                <Flex direction="column" minHeight="85vh" bg="black">
 
                     <Flex 
                         direction={{
@@ -192,7 +192,7 @@ function Sessions() {
                         <Flex 
                             direction="column" 
                             width={{base: "100%", sm: "50%"}} 
-                            height="500px"
+                            height="800px"
                             borderRight={{base: "0px solid #000000", sm: "4px solid #000000"}}
                             borderTop="4px solid #000000"
                             backgroundImage={rachelnoyo800}
@@ -204,13 +204,60 @@ function Sessions() {
                         <Flex 
                             direction="column" 
                             width={{base: "100%", sm: "50%"}} 
-                            height="500px"
+                            height="800px"
                             borderTop="4px solid #000000"
-                            backgroundImage={rachelpool800} 
+                            backgroundImage={rachelbluffs800} 
+                            backgroundPosition="center" 
+                            backgroundRepeat="no-repeat"
+                        >
+                            <SessionsModal image={rachelbluffs800} />
+                        </Flex>
+                    </Flex>
+
+                    <Flex 
+                        direction={{
+                            base: "column",
+                            sm: "row",
+                        }} 
+                    >
+                        <Flex 
+                            direction="column" 
+                            width={{base: "100%", sm: "50%"}} 
+                            height="500px"
+                            borderRight={{base: "0px solid #000000", sm: "4px solid #000000"}}
+                            borderTop="4px solid #000000"
+                            backgroundImage={rachelpool800}
                             backgroundPosition="center" 
                             backgroundRepeat="no-repeat"
                         >
                             <SessionsModal image={rachelpool800} />
+                        </Flex>
+                        <Flex 
+                            direction="column" 
+                            width={{base: "100%", sm: "50%"}} 
+                            height="500px"
+                            borderTop="4px solid #000000"
+                            backgroundImage={racheljup800} 
+                            backgroundPosition="center" 
+                            backgroundRepeat="no-repeat"
+                        >
+                            <SessionsModal image={racheljup800} />
+                        </Flex>
+                    </Flex>
+
+                    <Flex 
+                        direction="row" 
+                    >
+                        <Flex 
+                            direction="column" 
+                            width="100%" 
+                            height="500px"
+                            borderTop="4px solid #000000"
+                            backgroundImage={rachelbeach800}
+                            backgroundPosition="center" 
+                            backgroundRepeat="no-repeat"
+                        >
+                            <SessionsModal image={rachelbeach800} />
                         </Flex>
                     </Flex>
 

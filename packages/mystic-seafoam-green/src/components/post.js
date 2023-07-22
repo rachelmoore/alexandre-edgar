@@ -39,44 +39,44 @@ console.log(imageArr);
 
   if (!data.isFetching) {
     return (
-      <>
-      <Flex 
-        direction="column"
-        width="100%" 
-        height="100%"
-        minHeight="85vh"
-        padding={{base: 5, lg: 20}}
-        bg="brand.200"
-      >
-      <Heading size="xl" mt={5} mb={5} color="brand.100">
-        <Html2React html={post.title.rendered} />
-      </Heading>
-        <HStack mb={2}>
-          <Text size="lg" fontWeight="600" color="blackAlpha.800">
-            Posted: 
-          </Text>
-          <Text size="lg" color="blackAlpha.800">
-            {formattedDate}
-          </Text>
-        </HStack>
-        <HStack mb={5}>
-          <Text size="lg" fontWeight="600" color="blackAlpha.800">
-            Author:
-          </Text>
-          <Text size="lg" color="blackAlpha.800">
-            {author.name}
-          </Text>
-        </HStack>
-        <Flex direction="column">
-          {state.source.attachment[post.featured_media] &&
-            <Image src={state.source.attachment[post.featured_media].source_url} />
-          }
-          <Text fontWeight={500} mb={8} fontSize="lg" color="blackAlpha.800" className="blogPost">
-            <Html2React html={post.content.rendered} />
-          </Text>
+      <Flex direction="column" bg="brand.200">
+        <Flex 
+          direction="column"
+          width="100%" 
+          height="100%"
+          minHeight="85vh"
+          padding={{base: 5, lg: 20}}
+          bg="brand.200"
+        >
+        <Heading size="xl" mt={5} mb={5} color="brand.100">
+          <Html2React html={post.title.rendered} />
+        </Heading>
+          <HStack mb={2}>
+            <Text size="lg" fontWeight="600" color="blackAlpha.800">
+              Posted: 
+            </Text>
+            <Text size="lg" color="blackAlpha.800">
+              {formattedDate}
+            </Text>
+          </HStack>
+          <HStack mb={5}>
+            <Text size="lg" fontWeight="600" color="blackAlpha.800">
+              Author:
+            </Text>
+            <Text size="lg" color="blackAlpha.800">
+              {author.name}
+            </Text>
+          </HStack>
+          <Flex direction="column">
+            {state.source.attachment[post.featured_media] &&
+              <Image src={state.source.attachment[post.featured_media].source_url} />
+            }
+            <Text fontWeight={500} mb={8} fontSize="lg" color="blackAlpha.800" className="blogPost">
+              <Html2React html={post.content.rendered} />
+            </Text>
+          </Flex>
         </Flex>
       </Flex>
-      </>
     )
   }
 }

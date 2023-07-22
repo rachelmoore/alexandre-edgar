@@ -8,24 +8,33 @@ import {
 import {
   extendTheme,
   Flex,
-  Box
+  Button,
+  Box,
+  SimpleGrid,
+  Text,
+  Center
 } from '@chakra-ui/react'
 import { ChakraProvider } from '@chakra-ui/react'
 import Switch from "@frontity/components/switch"
+import Link from "@frontity/components/link";
 import List from "./list"
 import Post from "./post"
 import Page from "./page"
-import Navigation from "./navigation"
-import Footer from "./footer"
-import Contact from "./contact"
-import Carousel from "./carousel/carousel";
-import PhotoGallery from "./photogallery/photogallery";
-import Sessions from "./sessions"
+import Navigation from "./navigation";
+import Footer from "./footer";
 import Loading from "./loading";
+import Sessions from "./sessions";
+import PhotoGallery from "./photogallery/photogallery";
+import Gallery from "./carousel/gallery";
+import rachelmain800 from "../assets/carousel/rachelmain800.jpg";
+import windowflowers800 from "../assets/carousel/windowflowers800.jpg";
+import { images } from './carousel/data';
 
 const Root = ({ state }) => {
     const data = state.source.get(state.router.link);
     const isBlog = state.router.link.startsWith("/blog");
+    const isBooking = state.router.link.startsWith("/book");
+    const isGallery = state.router.link.startsWith("/gallery");
 
     const theme = extendTheme({
       colors: {
@@ -99,29 +108,61 @@ const Root = ({ state }) => {
         />
 
         <Navigation />
-        <Box width="100%" height="5px" bg="#FFFFFF" />
 
         {state.router.link === "/" &&
-          <>
-            {/* <Carousel /> */}
-            <PhotoGallery />
+          <Flex minHeight="85vh" pt={1} pb={1} bg="black" directon="column" alignItems="center" justifyContent="center">
 
-            <Flex direction="column" align="center" bg="brand.100">
-              <Contact />
+            <Flex direction={{base: "column", sm: "row"}} >
+
+              <Flex 
+                height='85vh'
+                width={{base: "100vw", sm: "50vw", lg: "800px"}}   
+                backgroundImage={rachelmain800}
+                backgroundPosition="center"
+                backgroundRepeat="no-repeat"
+                mr={{base: 0, sm: 1}}
+                mb={{base: 1, sm: 0}}
+                direction="column"
+                alignItems="center"
+                justifyContent="flex-end"
+              >
+                <Link link="https://alexandreedgar.com/book">
+                  <Button mb={20} variant="outline" border="3px solid" size="lg" color="white" _hover={{background: "white", color: "black"}}>
+                      Book a Photoshoot
+                  </Button>
+                </Link>
+              </Flex>
+
+              <Flex 
+                height='85vh'   
+                width={{base: "100vw", sm: "50vw", lg: "800px"}}   
+                backgroundImage={windowflowers800}
+                backgroundPosition="center"
+                backgroundRepeat="no-repeat"
+                direction="column"
+                alignItems="center"
+                justifyContent="flex-end"
+              >
+                <Link link="https://alexandreedgar.com/gallery">
+                  <Button mb={20} variant="outline" border="3px solid" size="lg" color="white" _hover={{background: "white", color: "black"}}>
+                      View Gallery
+                  </Button>
+                </Link>
+              </Flex>
+              
             </Flex>
 
-            <Flex direction="row" align="center" bg="#FFFFFF">
-              <Sessions />
-            </Flex>
-          </>
+          </Flex>
         }
         
-        <Switch>
-          <Loading when={data.isFetching} />
-          <List when={data.isArchive} />
-          <Post when={data.isPost} />
-          <Page when={data.isPage} />
-        </Switch>
+          <Switch>
+            <Loading when={data.isFetching} />
+            <Sessions when={isBooking} />
+            <Gallery images={images} when={isGallery} />
+            <List when={data.isArchive} />
+            <Post when={data.isPost} />
+            <Page when={data.isPage} />
+          </Switch>
 
         <Footer />
       </ChakraProvider>

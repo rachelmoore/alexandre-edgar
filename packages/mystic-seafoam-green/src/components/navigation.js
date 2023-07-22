@@ -25,7 +25,7 @@ function Navigation() {
     const btnRef = React.useRef();
   
     return (
-        <Flex direction="row" bg="brand.100" padding={5} justify="space-between">
+        <Flex direction="row" bg="blackAlpha.800" padding={5} justify="space-between">
 
             <Flex>
                 <Link link="/">
@@ -34,13 +34,13 @@ function Navigation() {
             </Flex>
 
             <Flex direction="row">
-                <Flex direction="row" color="brand.700" display={{ base: 'none', sm: 'flex' }}>
+                {/* <Flex direction="row" color="brand.700" display={{ base: 'none', sm: 'flex' }}>
                     <Link link="/"><Text fontSize="xl" pl={3}>Home</Text></Link>
                     <Link link="/about-alexandre"><Text fontSize="xl" pl={3}>About</Text></Link>
                     <Link link="/blog"><Text fontSize="xl" pl={3}>Blog</Text></Link>
-                </Flex>
+                </Flex> */}
 
-                <Button ref={btnRef} display={{ base: 'flex', sm: 'none' }} ml={3} mr={3} bg="brand.200" onClick={onOpen}>
+                <Button ref={btnRef} ml={3} mr={3} bg="brand.200" onClick={onOpen}>
                     <Icon as={FiMenu} color="white" boxSize={7} />
                 </Button>
 
@@ -51,7 +51,7 @@ function Navigation() {
                 finalFocusRef={btnRef}
                 >
                 <DrawerOverlay />
-                <DrawerContent bg='brand.100' color="brand.400">
+                <DrawerContent bg="whiteAlpha.800" color="blackAlpha.800">
                     <DrawerCloseButton />
                     <DrawerHeader>
                         <Link link="/">
@@ -63,15 +63,17 @@ function Navigation() {
                         <Flex direction="column">
                             <Link link="/"><Text fontSize="xl" mb={2}>Home</Text></Link>
                             <Link link="/about-alexandre"><Text fontSize="xl" mb={2}>About Alexandre</Text></Link>
-                            <Link link="/blog"><Text fontSize="xl" mb={2}>Blog</Text></Link>
+                            <Link link="https://alexandreedgar.com/book"><Text fontSize="xl" mb={2}>Book a Session</Text></Link>
+                            <Link link="/https://alexandreedgar.com/gallery"><Text fontSize="xl" mb={2}>Gallery</Text></Link>
+                            {/* <Link link="/blog"><Text fontSize="xl" mb={2}>Blog</Text></Link> */}
                         </Flex>
                     </DrawerBody>
 
                     <DrawerFooter>
                         <Flex direction="row">
-                            <a href="mailto:alexandrewedgar@gmail.com"><Icon as={FiMail} color="white" boxSize={7} mr={3}></Icon></a>
-                            <Link link="https://instagram.com/alexandrewedgar"><Icon as={FaInstagram} color="white" boxSize={7} mr={3}></Icon></Link>
-                            <a href="tel:669-437-0406"><Icon as={FiPhone} color="white" boxSize={7} mr={3}></Icon></a>
+                            <a href="mailto:alexandrewedgar@gmail.com"><Icon as={FiMail} color="blackAlpha.800" boxSize={7} mr={3}></Icon></a>
+                            <Link link="https://instagram.com/alexandrewedgar"><Icon as={FaInstagram} color="blackAlpha.800" boxSize={7} mr={3}></Icon></Link>
+                            <a href="tel:669-437-0406"><Icon as={FiPhone} color="blackAlpha.800" boxSize={7} mr={3}></Icon></a>
                         </Flex>
                     </DrawerFooter>
                 </DrawerContent>

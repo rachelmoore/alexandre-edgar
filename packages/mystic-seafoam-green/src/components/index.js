@@ -108,41 +108,54 @@ const Root = ({ state }) => {
         {/* <Box width="100%" height="5px" bg="#FFFFFF" /> */}
 
         {state.router.link === "/" &&
-          <Box minHeight="85vh" pt={1} pb={1} bg="black">
-            <SimpleGrid columns={{base: 1, sm: 2}} spacing={1}>
-              <Box 
-                height='85vh'   
+          <Flex minHeight="85vh" pt={1} pb={1} bg="black" directon="column" alignItems="center" justifyContent="center">
+
+            <Flex direction={{base: "column", sm: "row"}} >
+
+              <Flex 
+                height='85vh'
+                width={{base: "100vw", sm: "50vw", lg: "800px"}}   
                 backgroundImage={rachelmain800}
                 backgroundPosition="center"
                 backgroundRepeat="no-repeat"
+                mr={{base: 0, sm: 1}}
+                direction="column"
+                alignItems="center"
+                justifyContent="flex-end"
               >
-                <Flex height="100%" direction="column">
-                  <Flex height="50%" />
-                  <Flex direction="column" height="50%" justifyContent="flex-end" alignItems="center">
+                {/* <Flex height="100%" direction="column">
+                  <Flex height="50%" /> */}
+                  {/* <Flex direction="column" height="50%" justifyContent="flex-end" alignItems="center"> */}
                     <Button mb={20} variant="outline" size="lg" color="white" _hover={{background: "white", color: "black"}}>
                         Book a Photoshoot
                     </Button>
-                  </Flex>
-                </Flex>
-              </Box>
+                  {/* </Flex> */}
+                {/* </Flex> */}
+              </Flex>
 
-              <Box 
+              <Flex 
                 height='85vh'   
+                width={{base: "100vw", sm: "50vw", lg: "800px"}}   
                 backgroundImage={windowflowers800}
                 backgroundPosition="center"
                 backgroundRepeat="no-repeat"
+                direction="column"
+                alignItems="center"
+                justifyContent="flex-end"
               >
-                <Flex height="100%" direction="column">
+                {/* <Flex height="100%" direction="column">
                   <Flex height="50%" />
-                  <Flex direction="column" height="50%" justifyContent="flex-end" alignItems="center">
+                  <Flex direction="column" height="50%" justifyContent="flex-end" alignItems="center"> */}
                     <Button mb={20} variant="outline" size="lg" color="white" _hover={{background: "white", color: "black"}}>
                         View Gallery
                     </Button>
-                  </Flex>
-                </Flex>
-              </Box>
-            </SimpleGrid>
-          </Box>
+                  {/* </Flex>
+                </Flex> */}
+              </Flex>
+              
+            </Flex>
+
+          </Flex>
         }
         
         <Switch>

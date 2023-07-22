@@ -119,6 +119,7 @@ const Root = ({ state }) => {
                 backgroundPosition="center"
                 backgroundRepeat="no-repeat"
                 mr={{base: 0, sm: 1}}
+                mb={{base: 1, sm: 0}}
                 direction="column"
                 alignItems="center"
                 justifyContent="flex-end"
@@ -126,7 +127,7 @@ const Root = ({ state }) => {
                 {/* <Flex height="100%" direction="column">
                   <Flex height="50%" /> */}
                   {/* <Flex direction="column" height="50%" justifyContent="flex-end" alignItems="center"> */}
-                    <Button mb={20} variant="outline" size="lg" color="white" _hover={{background: "white", color: "black"}}>
+                    <Button mb={20} variant="outline" border="3px solid" size="lg" color="white" _hover={{background: "white", color: "black"}}>
                         Book a Photoshoot
                     </Button>
                   {/* </Flex> */}
@@ -146,7 +147,7 @@ const Root = ({ state }) => {
                 {/* <Flex height="100%" direction="column">
                   <Flex height="50%" />
                   <Flex direction="column" height="50%" justifyContent="flex-end" alignItems="center"> */}
-                    <Button mb={20} variant="outline" size="lg" color="white" _hover={{background: "white", color: "black"}}>
+                    <Button mb={20} variant="outline" border="3px solid" size="lg" color="white" _hover={{background: "white", color: "black"}}>
                         View Gallery
                     </Button>
                   {/* </Flex>

@@ -22,7 +22,7 @@ function Gallery(props) {
     slideChanged: (slider) => setCurrentSlide(slider.track.details.rel),
   })
   return (
-    <Stack spacing="4" {...rootProps} margin={10}>
+    <Stack spacing="4" {...rootProps} p={10} bg="brand.700">
       <AspectRatio ratio={aspectRatio}>
         <Image
           src={images[index].src}

@@ -26,7 +26,6 @@ import Loading from "./loading";
 import Sessions from "./sessions";
 import PhotoGallery from "./photogallery/photogallery";
 import Gallery from "./carousel/gallery";
-import ThumbGallery from "./thumbgallery/thumbgallery";
 import rachelmain800 from "../assets/carousel/rachelmain800.jpg";
 import windowflowers800 from "../assets/carousel/windowflowers800.jpg";
 import { images } from './carousel/data';

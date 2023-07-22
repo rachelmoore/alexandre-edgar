@@ -6,9 +6,11 @@ import {
   Flex
 } from '@chakra-ui/react';
 import { InlineWidget } from "react-calendly";
+import Contact from "./contact";
 
 function Sessions() {
     return (
+        <Flex direction="column">
         <Flex 
             direction={{
                 base: "column",
@@ -42,6 +44,10 @@ function Sessions() {
                     <InlineWidget id="calendly-widget" url="https://calendly.com/alexandreedgar/portrait-session"/>
                 </CalendlyWrapper>
             </Flex>
+        </Flex>
+        <Flex direction="column" align="center" bg="black">
+          <Contact />
+        </Flex>
         </Flex>
     )
   }

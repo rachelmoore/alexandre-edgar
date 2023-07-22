@@ -11,7 +11,8 @@ import {
   Button,
   Box,
   SimpleGrid,
-  Text
+  Text,
+  Center
 } from '@chakra-ui/react'
 import { ChakraProvider } from '@chakra-ui/react'
 import Switch from "@frontity/components/switch"

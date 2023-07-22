@@ -1,17 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { styled } from "frontity";
 import {
-  Heading,
   Text,
   Flex,
   Grid,
   GridItem,
-  Image,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  Box,
-  Button,
   useMediaQuery
 } from '@chakra-ui/react';
 import { InlineWidget } from "react-calendly";
@@ -24,9 +17,7 @@ import rachelbeach800 from "../assets/carousel/rachelbeach800.jpg";
 import rachelnoyo800 from "../assets/carousel/rachelnoyo800.jpg";
 import rachelbluffs800 from "../assets/carousel/rachelbluffs800.jpg";
 import racheljup800 from "../assets/carousel/racheljup800.jpg";
-import racheljupiterskirt800 from "../assets/carousel/racheljupiterskirt800.jpg";
 import racheljupiterskirt1000 from "../assets/carousel/racheljupiterskirt1000.jpg";
-import racheljupiterskirt1200 from "../assets/carousel/racheljupiterskirt1200.jpg";
 
 function Sessions() {
     const [isLargerThan768] = useMediaQuery('(min-width: 768px)')
@@ -50,6 +41,7 @@ function Sessions() {
         }
 
         {!loading && 
+        <>
         <Flex minHeight="85vh" pt={1} pb={1} bg="black" directon="column" alignItems="center" justifyContent="center">
             
             {fullSize &&
@@ -264,6 +256,10 @@ function Sessions() {
                 </Flex>
             }
         </Flex>
+        <Flex direction="column" align="center" bg="black">
+          <Contact />
+        </Flex>
+        </>
     }
     </>
     )

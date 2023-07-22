@@ -74,14 +74,11 @@ function Sessions() {
         >
 
             <GridItem colSpan={3} rowSpan={2} backgroundImage={rachelmain600} backgroundPosition="center" backgroundRepeat="no-repeat">
-                {/* <Flex height="100%" width="100%" role="group" justifyContent="center" alignItems="center" _hover={{ background: "blackAlpha.600" }}>
-                    <Button mb={20} variant="outline" border="3px solid" size="lg" color="white" display="none" _groupHover={{ display: "flex" }} _hover={{background: "white", color: "black"}}>
-                        View Full Image
-                    </Button>
-                </Flex> */}
                 <SessionsModal image={rachelmain600} />
             </GridItem>
-            <GridItem colSpan={5} rowSpan={2} backgroundImage={racheljupiterskirt1000} backgroundPosition="center" backgroundRepeat="no-repeat"  />
+            <GridItem colSpan={5} rowSpan={2} backgroundImage={racheljupiterskirt1000} backgroundPosition="center" backgroundRepeat="no-repeat">
+                <SessionsModal image={racheljupiterskirt1000} />
+            </GridItem>
             <GridItem colSpan={5} rowSpan={1} bg='brand.700'>
                 <Flex height="100%" p={8} direction="column" alignItems="center" justifyContent="center">
                     <Text fontWeight={500} mb={5} fontSize="lg" color="blackAlpha.800">
@@ -102,13 +99,12 @@ function Sessions() {
                     <InlineWidget id="calendly-widget" url="https://calendly.com/alexandreedgar/portrait-session"/>
                 </CalendlyWrapper>
             </GridItem>
-            <GridItem colSpan={3} rowSpan={1} backgroundImage={rachelbeach800} backgroundPosition="center" backgroundRepeat="no-repeat" />
-            <GridItem colSpan={2} rowSpan={1} backgroundImage={rachelpool800} backgroundPosition="center" backgroundRepeat="no-repeat" />
-            {/* <GridItem colSpan={2} rowSpan={1} backgroundImage={rachelpool800} backgroundPosition="center" backgroundRepeat="no-repeat" /> */}
-            {/* <GridItem colSpan={3} backgroundImage={racheljupiterskirt800} backgroundPosition="center" backgroundRepeat="no-repeat" />
-            <GridItem colSpan={2} backgroundImage={rachelpool800} backgroundPosition="center" backgroundRepeat="no-repeat" /> */}
-            {/* <GridItem colSpan={4} backgroundImage={racheljupiterskirt800} backgroundPosition="center" backgroundRepeat="no-repeat" />
-            <GridItem colSpan={4} backgroundImage={rachelpool800} backgroundPosition="center" backgroundRepeat="no-repeat" /> */}
+            <GridItem colSpan={3} rowSpan={1} backgroundImage={rachelbeach800} backgroundPosition="center" backgroundRepeat="no-repeat">
+                <SessionsModal image={rachelbeach800} />
+            </GridItem>
+            <GridItem colSpan={2} rowSpan={1} backgroundImage={rachelpool800} backgroundPosition="center" backgroundRepeat="no-repeat">
+                <SessionsModal image={rachelpool800} />
+            </GridItem>
         </Grid>
     )
   }

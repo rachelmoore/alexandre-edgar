@@ -27,7 +27,7 @@ function SessionsModal({ image }) {
   
             <Modal isOpen={isOpen} onClose={onClose} size="full">
             <ModalOverlay />
-            <ModalContent bg="blackAlpha.600">
+            <ModalContent bg="blackAlpha.700">
                 <ModalCloseButton color="white" />
                 <ModalBody>
                     <Center>

@@ -25,8 +25,11 @@ import Footer from "./footer";
 import Loading from "./loading";
 import Sessions from "./sessions";
 import PhotoGallery from "./photogallery/photogallery";
+import Gallery from "./carousel/gallery";
+import ThumbGallery from "./thumbgallery/thumbgallery";
 import rachelmain800 from "../assets/carousel/rachelmain800.jpg";
 import windowflowers800 from "../assets/carousel/windowflowers800.jpg";
+import { images } from './carousel/data';
 
 const Root = ({ state }) => {
     const data = state.source.get(state.router.link);
@@ -154,16 +157,12 @@ const Root = ({ state }) => {
         }
         
           <Switch>
-        <Flex minHeight="85vh">
             <Loading when={data.isFetching} />
             <Sessions when={isBooking} />
-        </Flex>
-            <PhotoGallery when={isGallery} />
-            <Flex minHeight="85vh">
+            <Gallery images={images} when={isGallery} />
             <List when={data.isArchive} />
             <Post when={data.isPost} />
             <Page when={data.isPage} />
-            </Flex>
           </Switch>
 
         <Footer />

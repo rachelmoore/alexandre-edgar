@@ -43,9 +43,10 @@ function Sessions({ state, libraries }) {
         const response = await libraries.source.api.get({
             endpoint: "media",
             params: {
-              parent: post.id,
+              id: 86,
             },
           });
+          console.log("response", response);
           const entitiesAdded = await libraries.source.populate({ response, state });
           setImages(entitiesAdded);
 

@@ -48,6 +48,7 @@ function Sessions({ state, libraries }) {
           });
           console.log("response", response);
           const entitiesAdded = await libraries.source.populate({ response, state });
+          console.log("source", state.source);
           setImages(entitiesAdded);
 
         setLoading(false);

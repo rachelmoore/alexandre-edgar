@@ -11,9 +11,7 @@ import {
   Heading,
   Text,
   Flex,
-  Image,
   Icon,
-  Link as ChakraLink,
   useDisclosure
 } from '@chakra-ui/react';
 import { FiMenu, FiMail, FiPhone } from "react-icons/fi";
@@ -34,11 +32,6 @@ function Navigation() {
             </Flex>
 
             <Flex direction="row">
-                {/* <Flex direction="row" color="brand.700" display={{ base: 'none', sm: 'flex' }}>
-                    <Link link="/"><Text fontSize="xl" pl={3}>Home</Text></Link>
-                    <Link link="/about-alexandre"><Text fontSize="xl" pl={3}>About</Text></Link>
-                    <Link link="/blog"><Text fontSize="xl" pl={3}>Blog</Text></Link>
-                </Flex> */}
 
                 <Button ref={btnRef} ml={3} mr={3} bg="brand.200" onClick={onOpen}>
                     <Icon as={FiMenu} color="white" boxSize={7} />

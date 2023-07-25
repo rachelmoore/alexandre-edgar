@@ -24,6 +24,11 @@ const settings = {
               type: "gallery",
               endpoint: "gallery",
               archive: "/gallery_category"
+            },
+            {
+              type: "booking",
+              endpoint: "booking",
+              archive: "/booking_category"
             }
           ],
         }

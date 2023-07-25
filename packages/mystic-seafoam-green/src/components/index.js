@@ -153,8 +153,7 @@ const Root = ({ state }) => {
           <Switch>
             <Loading when={data.isFetching} />
             <Gallery when={data.isGallery} />
-            {/* <Sessions when={isBooking} />
-            <Gallery images={images} when={isGallery} /> */}
+            <Sessions when={data.isBooking} />
             <List when={data.isArchive} />
             <Post when={data.isPost} />
             <Page when={data.isPage} />

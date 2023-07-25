@@ -8,11 +8,7 @@ import {
 import {
   extendTheme,
   Flex,
-  Button,
-  Box,
-  SimpleGrid,
-  Text,
-  Center
+  Button
 } from '@chakra-ui/react'
 import { ChakraProvider } from '@chakra-ui/react'
 import Switch from "@frontity/components/switch"
@@ -24,17 +20,16 @@ import Navigation from "./navigation";
 import Footer from "./footer";
 import Loading from "./loading";
 import Sessions from "./sessions";
-import PhotoGallery from "./photogallery/photogallery";
 import Gallery from "./carousel/gallery";
 import rachelmain800 from "../assets/carousel/rachelmain800.jpg";
 import windowflowers800 from "../assets/carousel/windowflowers800.jpg";
-import { images } from './carousel/data';
 
 const Root = ({ state }) => {
     const data = state.source.get(state.router.link);
+    console.log("data", data);
     const isBlog = state.router.link.startsWith("/blog");
-    const isBooking = state.router.link.startsWith("/book");
-    const isGallery = state.router.link.startsWith("/gallery");
+    // const isBooking = state.router.link.startsWith("/book");
+    // const isGallery = state.router.link.startsWith("/gallery");
 
     const theme = extendTheme({
       colors: {
@@ -126,7 +121,7 @@ const Root = ({ state }) => {
                 alignItems="center"
                 justifyContent="flex-end"
               >
-                <Link link="https://alexandreedgar.com/book">
+                <Link link="https://alexandreedgar.com/booking/portraits">
                   <Button mb={20} variant="outline" border="3px solid" size="lg" color="white" _hover={{background: "white", color: "black"}}>
                       Book a Photoshoot
                   </Button>
@@ -143,7 +138,7 @@ const Root = ({ state }) => {
                 alignItems="center"
                 justifyContent="flex-end"
               >
-                <Link link="https://alexandreedgar.com/gallery">
+                <Link link="https://alexandreedgar.com/gallery/portfolio">
                   <Button mb={20} variant="outline" border="3px solid" size="lg" color="white" _hover={{background: "white", color: "black"}}>
                       View Gallery
                   </Button>
@@ -157,8 +152,8 @@ const Root = ({ state }) => {
         
           <Switch>
             <Loading when={data.isFetching} />
-            <Sessions when={isBooking} />
-            <Gallery images={images} when={isGallery} />
+            <Gallery when={data.isGallery} />
+            <Sessions when={data.isBooking} />
             <List when={data.isArchive} />
             <Post when={data.isPost} />
             <Page when={data.isPage} />
@@ -169,4 +164,4 @@ const Root = ({ state }) => {
     )
   }
   
-  export default connect(Root)
+  export default connect(Root);

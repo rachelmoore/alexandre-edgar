@@ -19,6 +19,18 @@ const settings = {
           "url": "https://gph.fxx.mybluehost.me/",
           "postsPage": "/blog",
           "homepage": "/homepage", // seems like this fixed it
+          "postTypes": [
+            {
+              type: "gallery",
+              endpoint: "gallery",
+              archive: "/gallery_category"
+            },
+            {
+              type: "booking",
+              endpoint: "booking",
+              archive: "/booking_category"
+            }
+          ],
         }
       }
     },

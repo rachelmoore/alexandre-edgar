@@ -20,17 +20,19 @@ import rachelbluffs800 from "../assets/carousel/rachelbluffs800.jpg";
 import racheljup800 from "../assets/carousel/racheljup800.jpg";
 import racheljupiterskirt1000 from "../assets/carousel/racheljupiterskirt1000.jpg";
 
-function Sessions({ state }) {
+function Sessions({ state, libraries }) {
     const data = state.source.get(state.router.link);
     const post = state.source[data.type][data.id];
     const fields = post.acf;
     console.log("post", post);
     console.log("acf", fields);
-    const [isLargerThan768] = useMediaQuery('(min-width: 768px)')
-    const [loading, setLoading] = useState(true);
-    const [fullSize, setFullSize] = useState(false);
 
-    useEffect(() => {
+    const [isLargerThan768] = useMediaQuery('(min-width: 768px)')
+    const [fullSize, setFullSize] = useState(false);
+    const [images, setImages] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(async () => {
         if (isLargerThan768) {
             setFullSize(true);
         }
@@ -38,11 +40,17 @@ function Sessions({ state }) {
             setFullSize(false);
         }
 
-        fetch(`https://alexandreedgar.com/wp-json/wp/v2/media?parent=${post.id}`)
-        .then(response => response.json())
-        .then(data => console.log("fetch response", data));
+        const response = await libraries.source.api.get({
+            endpoint: "media",
+            params: {
+              parent: post.id,
+            },
+          });
+          const entitiesAdded = await libraries.source.populate({ response, state });
+          setImages(entitiesAdded);
 
         setLoading(false);
+        console.log(images);
       }, [isLargerThan768]);
 
     return (

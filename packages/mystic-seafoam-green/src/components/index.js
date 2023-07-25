@@ -121,7 +121,7 @@ const Root = ({ state }) => {
                 alignItems="center"
                 justifyContent="flex-end"
               >
-                <Link link="https://alexandreedgar.com/book">
+                <Link link="https://alexandreedgar.com/booking/portraits">
                   <Button mb={20} variant="outline" border="3px solid" size="lg" color="white" _hover={{background: "white", color: "black"}}>
                       Book a Photoshoot
                   </Button>
@@ -138,7 +138,7 @@ const Root = ({ state }) => {
                 alignItems="center"
                 justifyContent="flex-end"
               >
-                <Link link="https://alexandreedgar.com/gallery">
+                <Link link="https://alexandreedgar.com/gallery/portfolio">
                   <Button mb={20} variant="outline" border="3px solid" size="lg" color="white" _hover={{background: "white", color: "black"}}>
                       View Gallery
                   </Button>

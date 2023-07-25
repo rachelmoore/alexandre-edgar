@@ -38,7 +38,7 @@ function Sessions({ state }) {
             setFullSize(false);
         }
 
-        fetch(`https://alexandreedgar.com/wp-json/wp/v2/media?parent=${post.id}`)
+        fetch(`https://alexandreedgar.com/wp-json/wp/v2/media?id=86`)
         .then(response => response.json())
         .then(data => console.log("fetch response", data));
 

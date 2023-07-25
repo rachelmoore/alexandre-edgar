@@ -8,6 +8,7 @@ import pole from "../../assets/carousel/pole.jpg"
 import landing from "../../assets/carousel/landing.jpg"
 import beachhouse from "../../assets/carousel/beachhouse.jpg"
 import whitepicket from "../../assets/carousel/whitepicket.jpg"
+import thefarmflowers from "../../assets/carousel/thefarmflowers.jpg"
 
 export const images = [
     {
@@ -70,6 +71,13 @@ export const images = [
       id: '09',
       src: whitepicket,
       alt: 'White picket fence with pink flowers in Mendocino California',
+      aspectRatio: 4 / 3, 
+      objectFit: "cover",
+    },
+    {
+      id: '10',
+      src: thefarmflowers,
+      alt: 'Flowers at The Farm Mendocino dinner event',
       aspectRatio: 4 / 3, 
       objectFit: "cover",
     },

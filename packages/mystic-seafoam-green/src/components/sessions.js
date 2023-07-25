@@ -48,12 +48,17 @@ function Sessions({ state, libraries }) {
           });
           console.log("response", response);
           const entitiesAdded = await libraries.source.populate({ response, state });
-          console.log("source", state.source);
+        //   console.log("source", state.source);
           setImages(entitiesAdded);
 
         setLoading(false);
         console.log(images);
       }, [isLargerThan768]);
+
+    useEffect(() => {
+        console.log("source", state.source);
+        console.log("images", images);
+    }, [images])
 
     return (
         <>

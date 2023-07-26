@@ -49,7 +49,7 @@ function Sessions({ state, libraries }) {
             // },
           });
           console.log("response", response);
-          console.log("response.json()", response.json());
+          console.log("response.body", response.body);
           const entitiesAdded = await libraries.source.populate({ response, state });
         //   console.log("source", state.source);
           setImages(entitiesAdded);

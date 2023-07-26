@@ -30,15 +30,9 @@ function Gallery({ state, rootProps }) {
   useEffect(() => {
     const wpImages = post._embedded;
     const wpImagesValues = Object.values(wpImages)[0];
-    console.log("galleryImages", wpImagesValues);
     setGalleryImages(wpImagesValues);
+    setLoading(false);
   }, []);
-
-  useEffect(() => {
-    if (galleryImages.length !== 0) {
-      setLoading(false);
-    }
-  }, [galleryImages])
 
   if (loading === true) {
     return <Loading />

@@ -45,7 +45,7 @@ function Sessions({ state, libraries }) {
         const response = await libraries.source.api.get({
             endpoint: "media",
             params: {
-              id: 86
+              id: 73
             },
           });
           console.log("response", response);

@@ -26,8 +26,6 @@ function Sessions({ state, libraries }) {
     const fields = post.acf;
     console.log("post", post);
     console.log("acf", fields);
-    const wpImages = post._embedded;
-    console.log("images pls", wpImages);
 
     const [isLargerThan768] = useMediaQuery('(min-width: 768px)')
     const [fullSize, setFullSize] = useState(false);
@@ -45,14 +43,33 @@ function Sessions({ state, libraries }) {
         const response = await libraries.source.api.get({
             endpoint: "media",
             params: {
+              id: 73
+            },
+          });
+          console.log("response with id for thefarmflowers", response);
+          const entitiesAdded = await libraries.source.populate({ response, state });
+          setImages(entitiesAdded);
+
+          const response2 = await libraries.source.api.get({
+            endpoint: "media",
+            params: {
+              id: 94
+            },
+          });
+          console.log("response2 with id for post id", response2);
+
+          const response3 = await libraries.source.api.get({
+            endpoint: "media",
+            params: {
               id: 86
             },
           });
-          console.log("response", response);
-          console.log("response.body", response.body);
-          const entitiesAdded = await libraries.source.populate({ response, state });
-        //   console.log("source", state.source);
-          setImages(entitiesAdded);
+          console.log("response3 with response for first image in sessions booking", response3);
+
+          const response4 = await libraries.source.api.get({
+            endpoint: "media"
+          });
+          console.log("response4 with response for all media", response4);
 
         setLoading(false);
         console.log(images);

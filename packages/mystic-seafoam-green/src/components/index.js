@@ -26,10 +26,7 @@ import windowflowers800 from "../assets/carousel/windowflowers800.jpg";
 
 const Root = ({ state }) => {
     const data = state.source.get(state.router.link);
-    console.log("data", data);
     const isBlog = state.router.link.startsWith("/blog");
-    // const isBooking = state.router.link.startsWith("/book");
-    // const isGallery = state.router.link.startsWith("/gallery");
 
     const theme = extendTheme({
       colors: {

@@ -24,7 +24,6 @@ const Post = ({ state, libraries }) => {
     while ((result = regex.exec(str))) {
         res.push({id: `${currentId}`, src: result[1], aspectRatio: 4 / 3, objectFit: "contain !important", alt: "Alexandre Edgar Photography"});
         currentId += 1;
-        console.log("currentId", currentId);
     }
     return res;
 }

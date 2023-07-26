@@ -26,6 +26,8 @@ function Sessions({ state, libraries }) {
     const fields = post.acf;
     console.log("post", post);
     console.log("acf", fields);
+    const wpImages = post._embedded;
+    console.log("images pls", wpImages);
 
     const [isLargerThan768] = useMediaQuery('(min-width: 768px)')
     const [fullSize, setFullSize] = useState(false);
@@ -43,7 +45,7 @@ function Sessions({ state, libraries }) {
         const response = await libraries.source.api.get({
             endpoint: "media",
             params: {
-              id: 94,
+              id: 73,
             },
           });
           console.log("response", response);

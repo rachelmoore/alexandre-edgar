@@ -58,7 +58,7 @@ function Sessions({ state, libraries, actions }) {
       }, [isLargerThan768]);
 
       useEffect(() => {
-        const data2 = state.source.get("/booking/94?acf_format=standard");
+        const data2 = state.source.get("/booking/portraits?acf_format=standard");
         const post2 = state.source.booking[94];
         console.log("data2", data2);
         console.log("post2", post2);

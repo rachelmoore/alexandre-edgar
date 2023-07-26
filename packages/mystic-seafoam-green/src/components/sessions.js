@@ -40,28 +40,31 @@ function Sessions({ state, libraries, actions }) {
             setFullSize(false);
         }
 
-        actions.source.fetch("/media/" + 94);
+        actions.source.fetch("/media/?parent=94");
 
-        // const response = await libraries.source.api.get({
-        //     endpoint: "media",
-        //     params: {
-        //       id: 73
-        //     },
-        //   });
-        //   console.log("response with id for thefarmflowers", response);
-        //   const entitiesAdded = await libraries.source.populate({ response, state });
-        //   setImages(entitiesAdded);
+        const response = await libraries.source.api.get({
+            endpoint: "media",
+            params: {
+              parent: 94
+            },
+          });
+          console.log("response parent 94", response);
+          const entitiesAdded = await libraries.source.populate({ response, state });
+          setImages(entitiesAdded);
 
         setLoading(false);
         console.log(images);
       }, [isLargerThan768]);
 
       useEffect(() => {
-        const data2 = state.source.get("/media/" + 94);
+        const data2 = state.source.get("/media/?parent=94");
         const post2 = state.source.post[94];
         console.log("data2", data2);
         console.log("post2", post2);
         console.log("state.source", state.source);
+
+        const data3 = state.source.get("/media/" + 86);
+        console.log("data 3 trying image id", data3);
       }, [loading])
 
     return (

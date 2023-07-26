@@ -11,22 +11,12 @@ import { InlineWidget } from "react-calendly";
 import Contact from "./contact";
 import Loading from "./loading";
 import SessionsModal from "./sessionsmodal";
-import rachelmain600 from "../assets/carousel/rachelmain600.jpg";
-import rachelpool800 from "../assets/carousel/rachelpool800.jpg";
-import rachelbeach800 from "../assets/carousel/rachelbeach800.jpg";
-import rachelnoyo800 from "../assets/carousel/rachelnoyo800.jpg";
-import rachelbluffs800 from "../assets/carousel/rachelbluffs800.jpg";
-import racheljup800 from "../assets/carousel/racheljup800.jpg";
-import racheljupiterskirt1000 from "../assets/carousel/racheljupiterskirt1000.jpg";
 
 function Sessions({ state, libraries, actions }) {
     const data = state.source.get(state.router.link);
     const post = state.source[data.type][data.id];
     const acf = post.acf;
     const Html2React = libraries.html2react.Component;
-    console.log("post", post);
-    console.log("acf", acf);
-    console.log("typeof", acf.show_right_side_text === false)
 
     const [isLargerThan768] = useMediaQuery('(min-width: 768px)')
     const [fullSize, setFullSize] = useState(false);

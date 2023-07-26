@@ -25,7 +25,6 @@ function Contact() {
     });
 
     const onFormSubmit = async (data) => {
-        console.log("data", data);
         emailjs
         .send("service_ra0ks18", "template_93fg53o", data, "FpASGc0yvTZFTCFFh")
         .then(

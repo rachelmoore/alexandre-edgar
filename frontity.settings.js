@@ -16,6 +16,9 @@ const settings = {
       "state": {
         "source": {
           "api": "https://gph.fxx.mybluehost.me/wp-json",
+          "params": {
+            acf_format: "standard",
+          },
           "url": "https://gph.fxx.mybluehost.me/",
           "postsPage": "/blog",
           "homepage": "/homepage", // seems like this fixed it

@@ -23,6 +23,8 @@ import racheljupiterskirt1000 from "../assets/carousel/racheljupiterskirt1000.jp
 function Sessions({ state, libraries, actions }) {
     const data = state.source.get(state.router.link);
     const post = state.source[data.type][data.id];
+    console.log("data.type", data.type);
+    console.log("data.id", data.id);
     const fields = post.acf;
     console.log("post", post);
     console.log("acf", fields);
@@ -43,9 +45,8 @@ function Sessions({ state, libraries, actions }) {
         actions.source.fetch("/booking/94?acf_format=standard");
 
         const response = await libraries.source.api.get({
-            endpoint: "booking",
+            endpoint: "booking/portraits",
             params: {
-              id: 94,
               acf_format: "standard"
             },
           });

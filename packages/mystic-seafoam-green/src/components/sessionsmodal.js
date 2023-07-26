@@ -3,8 +3,6 @@ import {
     Modal,
     ModalOverlay,
     ModalContent,
-    ModalHeader,
-    ModalFooter,
     ModalBody,
     ModalCloseButton,
     useDisclosure,
@@ -15,8 +13,7 @@ import {
   } from '@chakra-ui/react'
 
 function SessionsModal({ image }) {
-    const { isOpen, onOpen, onClose } = useDisclosure()
-    console.log("image", image);
+    const { isOpen, onOpen, onClose } = useDisclosure();
     return (
         <>
         <Flex height="100%" width="100%" role="group" justifyContent="center" alignItems="center" _hover={{ background: "blackAlpha.600" }}>

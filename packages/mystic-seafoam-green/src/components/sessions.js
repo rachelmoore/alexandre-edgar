@@ -31,7 +31,6 @@ function Sessions({ state, libraries, actions }) {
 
     const [isLargerThan768] = useMediaQuery('(min-width: 768px)')
     const [fullSize, setFullSize] = useState(false);
-    const [images, setImages] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(async () => {
@@ -41,30 +40,8 @@ function Sessions({ state, libraries, actions }) {
         if (!isLargerThan768) {
             setFullSize(false);
         }
-
-        actions.source.fetch("/booking/94?acf_format=standard");
-
-        const response = await libraries.source.api.get({
-            endpoint: "booking/portraits",
-            params: {
-              acf_format: "standard"
-            },
-          });
-          console.log("response", response);
-          const entitiesAdded = await libraries.source.populate({ response, state });
-          setImages(entitiesAdded);
-
         setLoading(false);
-        console.log(images);
       }, [isLargerThan768]);
-
-      useEffect(() => {
-        const data2 = state.source.get("/booking/portraits?acf_format=standard");
-        const post2 = state.source.booking[94];
-        console.log("data2", data2);
-        console.log("post2", post2);
-        console.log("state.source", state.source);
-      }, [loading])
 
     return (
         <>

@@ -40,15 +40,16 @@ function Sessions({ state, libraries, actions }) {
             setFullSize(false);
         }
 
-        actions.source.fetch("/media/?parent=94");
+        actions.source.fetch("/booking/94?acf_format=standard");
 
         const response = await libraries.source.api.get({
-            endpoint: "media",
+            endpoint: "booking",
             params: {
-              parent: 94
+              id: 94,
+              acf_format: "standard"
             },
           });
-          console.log("response parent 94", response);
+          console.log("response", response);
           const entitiesAdded = await libraries.source.populate({ response, state });
           setImages(entitiesAdded);
 
@@ -57,14 +58,11 @@ function Sessions({ state, libraries, actions }) {
       }, [isLargerThan768]);
 
       useEffect(() => {
-        const data2 = state.source.get("/media/?parent=94");
-        const post2 = state.source.post[94];
+        const data2 = state.source.get("/booking/94?acf_format=standard");
+        const post2 = state.source.booking[94];
         console.log("data2", data2);
         console.log("post2", post2);
         console.log("state.source", state.source);
-
-        const data3 = state.source.get("/media/" + 86);
-        console.log("data 3 trying image id", data3);
       }, [loading])
 
     return (

@@ -20,7 +20,7 @@ import rachelbluffs800 from "../assets/carousel/rachelbluffs800.jpg";
 import racheljup800 from "../assets/carousel/racheljup800.jpg";
 import racheljupiterskirt1000 from "../assets/carousel/racheljupiterskirt1000.jpg";
 
-function Sessions({ state, libraries }) {
+function Sessions({ state, libraries, actions }) {
     const data = state.source.get(state.router.link);
     const post = state.source[data.type][data.id];
     const fields = post.acf;
@@ -40,45 +40,29 @@ function Sessions({ state, libraries }) {
             setFullSize(false);
         }
 
-        const response = await libraries.source.api.get({
-            endpoint: "media",
-            params: {
-              id: 73
-            },
-          });
-          console.log("response with id for thefarmflowers", response);
-          const entitiesAdded = await libraries.source.populate({ response, state });
-          setImages(entitiesAdded);
+        actions.source.fetch("/media/" + 94);
 
-          const response2 = await libraries.source.api.get({
-            endpoint: "media",
-            params: {
-              id: 94
-            },
-          });
-          console.log("response2 with id for post id", response2);
-
-          const response3 = await libraries.source.api.get({
-            endpoint: "media",
-            params: {
-              id: 86
-            },
-          });
-          console.log("response3 with response for first image in sessions booking", response3);
-
-          const response4 = await libraries.source.api.get({
-            endpoint: "media"
-          });
-          console.log("response4 with response for all media", response4);
+        // const response = await libraries.source.api.get({
+        //     endpoint: "media",
+        //     params: {
+        //       id: 73
+        //     },
+        //   });
+        //   console.log("response with id for thefarmflowers", response);
+        //   const entitiesAdded = await libraries.source.populate({ response, state });
+        //   setImages(entitiesAdded);
 
         setLoading(false);
         console.log(images);
       }, [isLargerThan768]);
 
-    useEffect(() => {
-        console.log("source", state.source);
-        console.log("images", images);
-    }, [images])
+      useEffect(() => {
+        const data2 = state.source.get("/media/" + 94);
+        const post2 = state.source.post[94];
+        console.log("data2", data2);
+        console.log("post2", post2);
+        console.log("state.source", state.source);
+      }, [loading])
 
     return (
         <>

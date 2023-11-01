@@ -26,7 +26,7 @@ function Contact() {
 
     const onFormSubmit = async (data) => {
         emailjs
-        .send("service_ra0ks18", "template_93fg53o", data, "FpASGc0yvTZFTCFFh")
+        .send("alex_gmail", "contact_form", data, "4p6cOFB1pNIOOZjG6")
         .then(
             (result) => {
             console.log(result.text);
@@ -60,15 +60,15 @@ function Contact() {
                     md: "6",
                 }}>
                     <form onSubmit={handleSubmit(onFormSubmit)}> 
-                    <FormControl id="fromName">
-                        <FormLabel htmlFor="fromName" color="brand.700" fontSize="sm">Name:</FormLabel>
-                        <Input name="fromName" color="brand.700" fontSize="sm" {...register("fromName", { required: "This is required."})} />
-                        <ErrorMessage errors={errors} name="fromName" render={({ message }) => <p className="error-message"><BiErrorCircle /> {message} </p>}/>
+                    <FormControl id="from_name">
+                        <FormLabel htmlFor="from_name" color="brand.700" fontSize="sm">Name:</FormLabel>
+                        <Input name="from_name" color="brand.700" fontSize="sm" {...register("from_name", { required: "This is required."})} />
+                        <ErrorMessage errors={errors} name="from_name" render={({ message }) => <p className="error-message"><BiErrorCircle /> {message} </p>}/>
                     </FormControl>
-                    <FormControl id="replyTo" mt={5}>
-                        <FormLabel htmlFor="replyTo" color="brand.700" fontSize="sm">Email:</FormLabel>
-                        <Input name="replyTo" color="brand.700" fontSize="sm" {...register("replyTo", { required: "This is required."})} />
-                        <ErrorMessage errors={errors} name="replyTo" render={({ message }) => <p className="error-message"><BiErrorCircle /> {message} </p>}/>
+                    <FormControl id="reply_to" mt={5}>
+                        <FormLabel htmlFor="reply_to" color="brand.700" fontSize="sm">Email:</FormLabel>
+                        <Input name="reply_to" color="brand.700" fontSize="sm" {...register("reply_to", { required: "This is required."})} />
+                        <ErrorMessage errors={errors} name="reply_to" render={({ message }) => <p className="error-message"><BiErrorCircle /> {message} </p>}/>
                     </FormControl>
                     <FormControl id="message" mt={5}>
                         <FormLabel htmlFor="message" color="brand.700" fontSize="sm">Message:</FormLabel>

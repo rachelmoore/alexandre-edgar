@@ -29,6 +29,7 @@
     "framer-motion": "^4.1.17",
     "frontity": "^1.17.2",
     "keen-slider": "^6.8.5",
+    "node": "12.0.0",
     "mystic-seafoam-green": "file:packages/mystic-seafoam-green",
     "react-calendly": "^4.1.0",
     "react-hook-form": "^7.37.0",

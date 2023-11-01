@@ -62,24 +62,24 @@ function Contact() {
                     <form onSubmit={handleSubmit(onFormSubmit)}> 
                     <FormControl id="from_name">
                         <FormLabel htmlFor="from_name" color="brand.700" fontSize="sm">Name:</FormLabel>
-                        <Input name="from_name" color="brand.700" fontSize="sm" {...register("from_name", { required: "This is required."})} />
+                        <Input name="from_name" color="brand.700" fontSize="sm" borderWidth="2px" {...register("from_name", { required: "This is required."})} />
                         <ErrorMessage errors={errors} name="from_name" render={({ message }) => <p className="error-message"><BiErrorCircle /> {message} </p>}/>
                     </FormControl>
                     <FormControl id="reply_to" mt={5}>
                         <FormLabel htmlFor="reply_to" color="brand.700" fontSize="sm">Email:</FormLabel>
-                        <Input name="reply_to" color="brand.700" fontSize="sm" {...register("reply_to", { required: "This is required."})} />
+                        <Input name="reply_to" color="brand.700" fontSize="sm" borderWidth="2px" {...register("reply_to", { required: "This is required."})} />
                         <ErrorMessage errors={errors} name="reply_to" render={({ message }) => <p className="error-message"><BiErrorCircle /> {message} </p>}/>
                     </FormControl>
                     <FormControl id="message" mt={5}>
                         <FormLabel htmlFor="message" color="brand.700" fontSize="sm">Message:</FormLabel>
-                        <Textarea name="message" color="brand.700" fontSize="sm" {...register("message")} />
+                        <Textarea name="message" color="brand.700" fontSize="sm" borderWidth="2px" {...register("message")} />
                         <ErrorMessage errors={errors} name="message" render={({ message }) => <p className="error-message"><BiErrorCircle /> {message} </p>}/>
                     </FormControl>
                     <Button 
                         type="submit"
                         size="sm"
                         borderColor="brand.700"
-                        borderWidth="1px"
+                        borderWidth="2px"
                         background="transparent"
                         mt={8}
                     >

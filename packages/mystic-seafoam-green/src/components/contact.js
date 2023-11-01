@@ -9,18 +9,21 @@ import {
   FormLabel,
   Input,
   Box,
-  Stack
+  Stack,
+  HStack,
+  Icon
 } from '@chakra-ui/react';
 import { 
     useForm,
     useFormState
 } from "react-hook-form";
+import { FiMail } from "react-icons/fi";
 import emailjs from "emailjs-com";
 import { ErrorMessage } from "@hookform/error-message";
 
 function Contact() {
     const { register, watch, setValue, setError, clearErrors, reset, handleSubmit, control } = useForm();
-    const { errors } = useFormState({
+    const { errors, isSubmitSuccessful } = useFormState({
         control,
     });
 
@@ -59,6 +62,7 @@ function Contact() {
                     base: "5",
                     md: "6",
                 }}>
+                    {!isSubmitSuccessful &&
                     <form onSubmit={handleSubmit(onFormSubmit)}> 
                     <FormControl id="from_name">
                         <FormLabel htmlFor="from_name" color="brand.700" fontSize="sm">Name:</FormLabel>
@@ -88,6 +92,16 @@ function Contact() {
                         </Text>
                     </Button>
                 </form> 
+                }
+
+                {isSubmitSuccessful &&
+                    <Flex direction="column" justify="center" alignItems="center" bg>
+                        <HStack>
+                            <Heading size="md" color="brand.700" fontWeight="500">Form Submitted</Heading>
+                            <Icon as={FiMail} color="brand.700" boxSize={5}></Icon>
+                       </HStack>
+                    </Flex>
+                }
             </Stack>
         </Box>
       </Flex>

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { styled, connect } from "frontity";
+import Link from "@frontity/components/link";
 import {
   Text,
   Flex,
+  Button,
   Grid,
   GridItem,
   useMediaQuery
@@ -64,6 +66,9 @@ function Sessions({ state, libraries, actions }) {
                                 <Text fontWeight={500} mb={5} fontSize="lg" color="blackAlpha.800">
                                     <Html2React html={acf.main_text} />
                                 </Text>
+                                <Link link="https://www.thumbtack.com/ca/albion/portrait-photographers/alexandre-edgar-photography/service/497567681906302982">
+                                    <Button size="lg" mt={5}>Book Photoshoot</Button>
+                                </Link>
                             </Flex>
                         </GridItem>
                         <GridItem rowSpan={3} colSpan={3} bg='white'>
@@ -73,9 +78,14 @@ function Sessions({ state, libraries, actions }) {
                                 </CalendlyWrapper>
                             }
                             {acf.show_right_side_text &&
-                                <Text fontWeight={500} mb={5} fontSize="lg" color="blackAlpha.800" p={8}>
-                                    <Html2React html={acf.right_side_text} />
-                                </Text>
+                                <Flex direction="column">
+                                    <Text fontWeight={500} mb={5} fontSize="lg" color="blackAlpha.800" p={8}>
+                                        <Html2React html={acf.right_side_text} />
+                                    </Text>
+                                    <Link link="https://www.thumbtack.com/ca/albion/portrait-photographers/alexandre-edgar-photography/service/497567681906302982">
+                                        <Button>Book Photoshoot</Button>
+                                    </Link>
+                                </Flex>
                             }
                         </GridItem>
 

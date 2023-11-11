@@ -168,8 +168,9 @@ function Sessions({ state, libraries, actions }) {
                             <Flex 
                                 direction="column" 
                                 width={{base: "100%", sm: "50%"}} 
-                                height="900px"
+                                // height="900px"
                                 borderTop="4px solid #000000"
+                                bg="brand.700"
                             >
                             {!acf.show_right_side_text &&
                                 <CalendlyWrapper>
@@ -177,9 +178,15 @@ function Sessions({ state, libraries, actions }) {
                                 </CalendlyWrapper>
                             }
                             {acf.show_right_side_text &&
-                                <Text fontWeight={500} mb={5} fontSize="lg" color="blackAlpha.800" p={8}>
-                                    <Html2React html={acf.right_side_text} />
-                                </Text>
+                                <Flex direction="column" alignItems="center" justifyContent="center" p={8}>
+                                    <Heading>Rates</Heading>
+                                    <Text fontWeight={500} mb={2} fontSize="lg" color="blackAlpha.800" p={8}>
+                                        <Html2React html={acf.right_side_text} />
+                                    </Text>
+                                    <Link link="https://www.thumbtack.com/ca/albion/portrait-photographers/alexandre-edgar-photography/service/497567681906302982">
+                                        <Button size="lg" mt={5}>Book Photoshoot</Button>
+                                    </Link>
+                                </Flex>
                             }
                             </Flex>
                         </Flex>

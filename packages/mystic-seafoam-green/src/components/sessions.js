@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { styled, connect } from "frontity";
+import Link from "@frontity/components/link";
 import {
   Text,
+  Heading,
   Flex,
+  Button,
   Grid,
   GridItem,
   useMediaQuery
@@ -61,21 +64,31 @@ function Sessions({ state, libraries, actions }) {
 
                         <GridItem colSpan={5} rowSpan={1} bg='brand.700'>
                             <Flex height="100%" p={8} direction="column" alignItems="center" justifyContent="center">
-                                <Text fontWeight={500} mb={5} fontSize="lg" color="blackAlpha.800">
+                                {/* <Heading>About</Heading> */}
+                                <Text fontWeight={500} mb={2} fontSize="lg" color="blackAlpha.800">
                                     <Html2React html={acf.main_text} />
                                 </Text>
+                                {/* <Link link="https://www.thumbtack.com/ca/albion/portrait-photographers/alexandre-edgar-photography/service/497567681906302982">
+                                    <Button size="lg" mt={5}>Book Photoshoot</Button>
+                                </Link> */}
                             </Flex>
                         </GridItem>
-                        <GridItem rowSpan={3} colSpan={3} bg='white'>
+                        <GridItem rowSpan={3} colSpan={3} bg='brand.700'>
                             {!acf.show_right_side_text &&
                                 <CalendlyWrapper>
                                     <InlineWidget id="calendly-widget" url={acf.calendly_link}/>
                                 </CalendlyWrapper>
                             }
                             {acf.show_right_side_text &&
-                                <Text fontWeight={500} mb={5} fontSize="lg" color="blackAlpha.800" p={8}>
-                                    <Html2React html={acf.right_side_text} />
-                                </Text>
+                                <Flex direction="column" alignItems="center" justifyContent="center" p={8}>
+                                    <Heading>Rates</Heading>
+                                    <Text fontWeight={500} mb={2} fontSize="lg" color="blackAlpha.800" p={8}>
+                                        <Html2React html={acf.right_side_text} />
+                                    </Text>
+                                    <Link link="https://www.thumbtack.com/ca/albion/portrait-photographers/alexandre-edgar-photography/service/497567681906302982">
+                                        <Button size="lg" mt={5}>Book Photoshoot</Button>
+                                    </Link>
+                                </Flex>
                             }
                         </GridItem>
 

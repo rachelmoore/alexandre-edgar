@@ -2,7 +2,7 @@ const settings = {
   "name": "alexandre-edgar",
   "state": {
     "frontity": {
-      "url": "https://gph.fxx.mybluehost.me/",
+      "url": "https://alexandreedgarwp.racheledgar.com/",
       "title": "Alexandre Edgar",
       "description": "You Are That"
     }
@@ -15,11 +15,11 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "api": "https://gph.fxx.mybluehost.me/wp-json",
+          "api": "https://alexandreedgarwp.racheledgar.com/wp-json",
           "params": {
             acf_format: "standard",
           },
-          "url": "https://gph.fxx.mybluehost.me/",
+          "url": "https://alexandreedgarwp.racheledgar.com/",
           "postsPage": "/blog",
           "homepage": "/homepage", // seems like this fixed it
           "postTypes": [

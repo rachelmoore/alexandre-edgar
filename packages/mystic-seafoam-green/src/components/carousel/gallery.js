@@ -67,7 +67,7 @@ function Gallery({ state, rootProps }) {
                     opacity: 1,
                   }}
                 >
-                  <Image src={image.media_details.sizes.large.source_url} objectFit="cover" alt={image.media_details.sizes.large.alt_text} fallback={<Skeleton />} />
+                  <Image src={image.source_url} objectFit="cover" alt={image.alt_text} fallback={<Skeleton />} />
                 </AspectRatio>
               </CarouselSlide>
             ))}

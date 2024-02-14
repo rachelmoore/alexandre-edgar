@@ -98,7 +98,8 @@ function Sessions({ state, libraries, actions }) {
                         <GridItem colSpan={2} rowSpan={2} backgroundImage={acf.image_4} backgroundPosition="center" backgroundRepeat="no-repeat">
                             <SessionsModal image={acf.image_4} />
                         </GridItem>
-{/* 
+                        
+                        {/* 
                         <GridItem colSpan={3} rowSpan={2} backgroundImage={acf.image_5} backgroundPosition="center" backgroundRepeat="no-repeat">
                             <SessionsModal image={acf.image_5} />
                         </GridItem>

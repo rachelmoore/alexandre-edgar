@@ -16,12 +16,8 @@ const Post = ({ state, libraries }) => {
   const acf = post.acf;
   const portraits = post.acf.gallery_information[0];
   const stills = post.acf.gallery_information[1];
-  console.log("portraits", portraits);
   const author = state.source.author[post.author]
   const Html2React = libraries.html2react.Component
-
-  console.log("post", post);
-  console.log("state.router.link", state.router.link)
 
   if (data.isFetching) {
     return <Loading />

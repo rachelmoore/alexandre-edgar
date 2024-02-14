@@ -14,8 +14,7 @@ const Post = ({ state, libraries }) => {
   const data = state.source.get(state.router.link)
   const post = state.source[data.type][data.id]
   const acf = post.acf;
-  const portraits = post.acf.gallery_information[0];
-  const stills = post.acf.gallery_information[1];
+  const galleryInfo = post.acf.gallery_information;
   const author = state.source.author[post.author]
   const Html2React = libraries.html2react.Component
 
@@ -23,7 +22,7 @@ const Post = ({ state, libraries }) => {
     return <Loading />
   }
 
-  if (!data.isFetching && !portraits) {
+  if (!data.isFetching && !galleryInfo) {
     return (
       <Flex direction="column" bg="brand.200">
         <Flex 
@@ -58,7 +57,7 @@ const Post = ({ state, libraries }) => {
     )
   }
 
-  if (!data.isFetching && portraits) {
+  if (!data.isFetching && galleryInfo) {
     return (
           <Flex minHeight="85vh" pt={1} pb={1} bg="black" directon="column" alignItems="center" justifyContent="center">
 
@@ -67,7 +66,7 @@ const Post = ({ state, libraries }) => {
               <Flex 
                 height='85vh'
                 width={{base: "100vw", sm: "50vw"}}   
-                backgroundImage={portraits.cover_image}
+                backgroundImage={galleryInfo[0].cover_image}
                 backgroundPosition="center"
                 backgroundRepeat="no-repeat"
                 // mr={{base: 0, sm: 1}}
@@ -76,9 +75,9 @@ const Post = ({ state, libraries }) => {
                 alignItems="center"
                 justifyContent="center"
               >
-                <Link link={portraits.link}>
+                <Link link={galleryInfo[0].link}>
                   <Button variant="brand.700" size="lg"> 
-                      View {portraits.name} Gallery
+                      View {galleryInfo[0].name} Gallery
                   </Button>
                 </Link>
               </Flex>
@@ -86,16 +85,16 @@ const Post = ({ state, libraries }) => {
               <Flex 
                 height='85vh'   
                 width={{base: "100vw", sm: "50vw"}}   
-                backgroundImage={stills.cover_image}
+                backgroundImage={galleryInfo[1].cover_image}
                 backgroundPosition="center"
                 backgroundRepeat="no-repeat"
                 direction="column"
                 alignItems="center"
                 justifyContent="center"
               >
-                <Link link={stills.link}>
+                <Link link={galleryInfo[1].link}>
                   <Button variant="brand.700" size="lg">
-                      View {stills.name} Gallery
+                      View {galleryInfo[1].name} Gallery
                   </Button>
                 </Link>
               </Flex>

@@ -48,7 +48,7 @@ function Sessions({ state, libraries, actions }) {
                 {fullSize &&
                     <Grid
                         minHeight='85vh'
-                        templateRows='repeat(6, 1fr)'
+                        templateRows='repeat(5, 1fr)'
                         templateColumns='repeat(8, 1fr)'
                         gap={1}
                         bg="black"
@@ -98,7 +98,8 @@ function Sessions({ state, libraries, actions }) {
                         <GridItem colSpan={2} rowSpan={2} backgroundImage={acf.image_4} backgroundPosition="center" backgroundRepeat="no-repeat">
                             <SessionsModal image={acf.image_4} />
                         </GridItem>
-
+                        
+                        {/* 
                         <GridItem colSpan={3} rowSpan={2} backgroundImage={acf.image_5} backgroundPosition="center" backgroundRepeat="no-repeat">
                             <SessionsModal image={acf.image_5} />
                         </GridItem>
@@ -107,7 +108,7 @@ function Sessions({ state, libraries, actions }) {
                         </GridItem>
                         <GridItem colSpan={2} rowSpan={2} backgroundImage={acf.image_7} backgroundPosition="center" backgroundRepeat="no-repeat">
                             <SessionsModal image={acf.image_7} />
-                        </GridItem>
+                        </GridItem> */}
 
                     </Grid>
                 }
@@ -222,7 +223,7 @@ function Sessions({ state, libraries, actions }) {
                             </Flex>
                         </Flex>
 
-                        <Flex 
+                        {/* <Flex 
                             direction={{
                                 base: "column",
                                 sm: "row",
@@ -267,7 +268,7 @@ function Sessions({ state, libraries, actions }) {
                             >
                                 <SessionsModal image={acf.image_7} />
                             </Flex>
-                        </Flex>
+                        </Flex> */}
 
                     </Flex>
                 }

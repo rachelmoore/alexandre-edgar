@@ -21,7 +21,7 @@ export const CarouselSlide = (props) => (
     position="relative"
     overflow="hidden"
     width="100%"
-    minH="100%"
+    // minH="100%"
     {...props}
   />
 )

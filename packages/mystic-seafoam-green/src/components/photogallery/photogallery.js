@@ -6,7 +6,6 @@ function PhotoGallery() {
   return (
     <Box
       maxW="3xl"
-      // height="90vh"
       mx="auto"
       px={{
         base: '4',
@@ -20,7 +19,6 @@ function PhotoGallery() {
       }}
     >
       <Gallery images={images} />
-      <Box height="250px" />
     </Box>
   )
 }

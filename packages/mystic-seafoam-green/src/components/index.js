@@ -45,7 +45,28 @@ const Root = ({ state }) => {
       fonts: {
         heading: "Lora",
         body: "Montserrat"
-      }
+      },
+      components: {
+        Button: {
+          variants: {
+            'brand.700': {
+              bg: 'brand.700',
+              border: '3px solid rgba(0, 0, 0, 0.80)',
+              _hover: {
+                bg: "brand.300",
+                color: "brand.700",
+                border: '3px solid brand.700',
+              },
+            },
+          },
+          // 6. We can overwrite defaultProps
+          // defaultProps: {
+          //   size: 'lg', // default is md
+          //   variant: 'sm', // default is solid
+          //   colorScheme: 'green', // default is gray
+          // },
+        },
+      },
     });
   
     return (
@@ -135,9 +156,9 @@ const Root = ({ state }) => {
                 alignItems="center"
                 justifyContent="flex-end"
               >
-                <Link link="https://alexandreedgar.com/gallery/portfolio">
+                <Link link="https://alexandreedgar.com/galleries">
                   <Button mb={20} variant="outline" border="3px solid" size="lg" color="white" _hover={{background: "white", color: "black"}}>
-                      View Gallery
+                      View Galleries
                   </Button>
                 </Link>
               </Flex>

@@ -1,25 +1,33 @@
-import React from "react"
-import { connect } from "frontity"
+import React from "react";
+import { connect } from "frontity";
+import Link from "@frontity/components/link";
 import {
   Button,
   Heading,
   Text,
   Flex
 } from '@chakra-ui/react';
-import Contact from "./contact"
+import Contact from "./contact";
 import Loading from "./loading";
 
 const Post = ({ state, libraries }) => {
   const data = state.source.get(state.router.link)
   const post = state.source[data.type][data.id]
+  const acf = post.acf;
+  const portraits = post.acf.gallery_information[0];
+  const stills = post.acf.gallery_information[1];
+  console.log("portraits", portraits);
   const author = state.source.author[post.author]
   const Html2React = libraries.html2react.Component
+
+  console.log("post", post);
+  console.log("state.router.link", state.router.link)
 
   if (data.isFetching) {
     return <Loading />
   }
 
-  if (!data.isFetching) {
+  if (!data.isFetching && !portraits) {
     return (
       <Flex direction="column" bg="brand.200">
         <Flex 
@@ -53,6 +61,54 @@ const Post = ({ state, libraries }) => {
       </Flex>
     )
   }
+
+  if (!data.isFetching && portraits) {
+    return (
+          <Flex minHeight="85vh" pt={1} pb={1} bg="black" directon="column" alignItems="center" justifyContent="center">
+
+            <Flex direction={{base: "column", sm: "row"}} >
+
+              <Flex 
+                height='85vh'
+                width={{base: "100vw", sm: "50vw"}}   
+                backgroundImage={portraits.cover_image}
+                backgroundPosition="center"
+                backgroundRepeat="no-repeat"
+                // mr={{base: 0, sm: 1}}
+                // mb={{base: 1, sm: 0}}
+                direction="column"
+                alignItems="center"
+                justifyContent="center"
+              >
+                <Link link={portraits.link}>
+                  <Button variant="brand.700" size="lg"> 
+                      View {portraits.name} Gallery
+                  </Button>
+                </Link>
+              </Flex>
+
+              <Flex 
+                height='85vh'   
+                width={{base: "100vw", sm: "50vw"}}   
+                backgroundImage={stills.cover_image}
+                backgroundPosition="center"
+                backgroundRepeat="no-repeat"
+                direction="column"
+                alignItems="center"
+                justifyContent="center"
+              >
+                <Link link={stills.link}>
+                  <Button variant="brand.700" size="lg">
+                      View {stills.name} Gallery
+                  </Button>
+                </Link>
+              </Flex>
+              
+            </Flex>
+
+          </Flex>
+        )
+        }
 }
 
 export default connect(Post)

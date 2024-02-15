@@ -13,7 +13,6 @@ import Loading from "./loading";
 const Post = ({ state, libraries }) => {
   const data = state.source.get(state.router.link)
   const post = state.source[data.type][data.id]
-  const acf = post.acf;
   const galleryInfo = post.acf.gallery_information;
   const author = state.source.author[post.author]
   const Html2React = libraries.html2react.Component
@@ -65,7 +64,7 @@ const Post = ({ state, libraries }) => {
 
               <Flex 
                 height='85vh'
-                width={{base: "100vw", sm: "50vw"}}   
+                width={{base: "100vw", sm: "50vw", lg: "800px"}}   
                 backgroundImage={galleryInfo[0].cover_image}
                 backgroundPosition="center"
                 backgroundRepeat="no-repeat"
@@ -84,7 +83,7 @@ const Post = ({ state, libraries }) => {
 
               <Flex 
                 height='85vh'   
-                width={{base: "100vw", sm: "50vw"}}   
+                width={{base: "100vw", sm: "50vw", lg: "800px"}}   
                 backgroundImage={galleryInfo[1].cover_image}
                 backgroundPosition="center"
                 backgroundRepeat="no-repeat"

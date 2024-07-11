@@ -15,7 +15,7 @@ import {
   useDisclosure
 } from '@chakra-ui/react';
 import { FiMenu, FiMail, FiPhone } from "react-icons/fi";
-import { FaInstagram } from 'react-icons/fa';
+// import { FaInstagram } from 'react-icons/fa';
 import Link from "@frontity/components/link";
 import realitycheque from "../assets/realitycheque.jpg";
 

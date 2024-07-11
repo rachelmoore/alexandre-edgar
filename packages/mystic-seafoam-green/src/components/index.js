@@ -23,6 +23,8 @@ import Sessions from "./sessions";
 import Gallery from "./carousel/gallery";
 import rachelmain800 from "../assets/carousel/rachelmain800.jpg";
 import windowflowers800 from "../assets/carousel/windowflowers800.jpg";
+import underconstruction from "../assets/underconstruction.gif";
+import fordbronco from "../assets/fordbronco.gif";
 
 const Root = ({ state }) => {
     const data = state.source.get(state.router.link);
@@ -130,37 +132,37 @@ const Root = ({ state }) => {
               <Flex 
                 height='85vh'
                 width={{base: "100vw", sm: "50vw", lg: "800px"}}   
-                backgroundImage={rachelmain800}
-                backgroundPosition="center"
-                backgroundRepeat="no-repeat"
+                backgroundImage={underconstruction}
+                // backgroundPosition="center"
+                backgroundRepeat="repeat"
                 mr={{base: 0, sm: 1}}
                 mb={{base: 1, sm: 0}}
                 direction="column"
                 alignItems="center"
                 justifyContent="flex-end"
               >
-                <Link link="https://alexandreedgar.com/booking/portraits">
+                {/* <Link link="https://alexandreedgar.com/booking/portraits">
                   <Button mb={20} variant="outline" border="3px solid" size="lg" color="white" _hover={{background: "white", color: "black"}}>
                       Book a Photoshoot
                   </Button>
-                </Link>
+                </Link> */}
               </Flex>
 
               <Flex 
                 height='85vh'   
                 width={{base: "100vw", sm: "50vw", lg: "800px"}}   
-                backgroundImage={windowflowers800}
-                backgroundPosition="center"
-                backgroundRepeat="no-repeat"
+                backgroundImage={fordbronco}
+                // backgroundPosition="center"
+                backgroundRepeat="repeat"
                 direction="column"
                 alignItems="center"
                 justifyContent="flex-end"
               >
-                <Link link="https://alexandreedgar.com/galleries">
+                {/* <Link link="https://alexandreedgar.com/galleries">
                   <Button mb={20} variant="outline" border="3px solid" size="lg" color="white" _hover={{background: "white", color: "black"}}>
                       View Galleries
                   </Button>
-                </Link>
+                </Link> */}
               </Flex>
               
             </Flex>
@@ -168,14 +170,14 @@ const Root = ({ state }) => {
           </Flex>
         }
         
-          <Switch>
+          {/* <Switch>
             <Loading when={data.isFetching} />
             <Gallery when={data.isGallery} />
             <Sessions when={data.isBooking} />
             <List when={data.isArchive} />
             <Post when={data.isPost} />
             <Page when={data.isPage} />
-          </Switch>
+          </Switch> */}
 
         <Footer />
       </ChakraProvider>

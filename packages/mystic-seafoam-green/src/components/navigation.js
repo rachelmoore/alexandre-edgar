@@ -9,7 +9,7 @@ import {
   DrawerContent,
   DrawerCloseButton,
   Heading,
-  Text,
+  Image,
   Flex,
   Icon,
   useDisclosure
@@ -17,6 +17,7 @@ import {
 import { FiMenu, FiMail, FiPhone } from "react-icons/fi";
 import { FaInstagram } from 'react-icons/fa';
 import Link from "@frontity/components/link";
+import realitycheque from "../assets/realitycheque.jpg";
 
 function Navigation() {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -54,20 +55,21 @@ function Navigation() {
 
                     <DrawerBody style={{overflowY: "scroll"}}>
                         <Flex direction="column">
-                            <Link link="/"><Text fontSize="xl" mb={2} _hover={{fontWeight: 600}}>Home</Text></Link>
+                            <Image src={realitycheque} />
+                            {/* <Link link="/"><Text fontSize="xl" mb={2} _hover={{fontWeight: 600}}>Home</Text></Link>
                             <Link link="/about-alexandre"><Text fontSize="xl" mb={2} _hover={{fontWeight: 600}}>About Alexandre</Text></Link>
                             <Link link="https://alexandreedgar.com/booking/portraits/"><Text fontSize="xl" mb={2} _hover={{fontWeight: 600}}>Book a Photoshoot</Text></Link>
                             <Link link="https://alexandreedgar.com/gallery/portraits/"><Text fontSize="xl" mb={2} _hover={{fontWeight: 600}}>Portrait Gallery</Text></Link>
-                            <Link link="https://alexandreedgar.com/gallery/stills/"><Text fontSize="xl" mb={2} _hover={{fontWeight: 600}}>Stills Gallery</Text></Link>
+                            <Link link="https://alexandreedgar.com/gallery/stills/"><Text fontSize="xl" mb={2} _hover={{fontWeight: 600}}>Stills Gallery</Text></Link> */}
                             {/* <Link link="/blog"><Text fontSize="xl" mb={2}>Blog</Text></Link> */}
                         </Flex>
                     </DrawerBody>
 
                     <DrawerFooter>
                         <Flex direction="row">
-                            <a href="mailto:alexandrewedgar@gmail.com"><Icon as={FiMail} color="brand.700" boxSize={7} mr={3}></Icon></a>
+                            {/* <a href="mailto:alexandrewedgar@gmail.com"><Icon as={FiMail} color="brand.700" boxSize={7} mr={3}></Icon></a>
                             <Link link="https://instagram.com/alexandreedgarphoto"><Icon as={FaInstagram} color="brand.700" boxSize={7} mr={3}></Icon></Link>
-                            <a href="tel:669-437-0406"><Icon as={FiPhone} color="brand.700" boxSize={7} mr={3}></Icon></a>
+                            <a href="tel:669-437-0406"><Icon as={FiPhone} color="brand.700" boxSize={7} mr={3}></Icon></a> */}
                         </Flex>
                     </DrawerFooter>
                 </DrawerContent>

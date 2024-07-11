@@ -14,7 +14,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import Switch from "@frontity/components/switch"
 import Link from "@frontity/components/link";
 import List from "./list"
-import Post from "./post"
+// import Post from "./post"
 // import Page from "./page"
 import Navigation from "./navigation";
 import Footer from "./footer";

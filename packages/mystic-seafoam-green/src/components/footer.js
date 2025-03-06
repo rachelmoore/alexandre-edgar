@@ -15,9 +15,9 @@ function Footer() {
                 <Text size="lg" color="brand.700">Alexandre Edgar © 2024</Text>
             </Flex>
             <Flex direction="row">
-              <a href="mailto:alexandrewedgar@gmail.com"><Icon as={FiMail} color="white" boxSize={7} mr={3}></Icon></a>
-              <Link link="https://instagram.com/alexandreedgarphoto"><Icon as={FaInstagram} color="white" boxSize={7} mr={3}></Icon></Link>
-              <a href="tel:669-437-0406"><Icon as={FiPhone} color="white" boxSize={7} mr={3}></Icon></a>
+              <a href="mailto:poopiterjerkson@gmail.com"><Icon as={FiMail} color="white" boxSize={7} mr={3}></Icon></a>
+              <Link link="https://instagram.com/boilingfrogentertainment"><Icon as={FaInstagram} color="white" boxSize={7} mr={3}></Icon></Link>
+              <a href="tel:867-5309"><Icon as={FiPhone} color="white" boxSize={7} mr={3}></Icon></a>
             </Flex>
       </Flex>
     )
